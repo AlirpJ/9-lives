@@ -8,6 +8,8 @@ var mv_endpoint
 
 #const JUMP_VELOCITY = 4.5
 
+@onready var light = $Light
+
 func _physics_process(delta: float) -> void:
 	# NOTE: Temporary CBVC. Please remove if we're not using buttons for input.
 	
@@ -28,9 +30,14 @@ func _physics_process(delta: float) -> void:
 	#	velocity.z = direction.z * SPEED
 	#else:
 	#	velocity.x = move_toward(velocity.x, 0, SPEED)
-	#	velocity.z = move_toward(velocity.z, 0, SPEED)
+	#	velocity.z = move_toward(vedlocity.z, 0, SPEED)
 
 	#move_and_slide()
+	
+	if Input.is_key_pressed(KEY_E):
+		light.modify_light_energy(.1)
+	if Input.is_key_pressed(KEY_Q):
+		light.modify_light_energy(-.1)
 	
 	if moving:
 		global_position = lerp(global_position, mv_endpoint, SPEED)

@@ -30,7 +30,6 @@ transform = Transform3D(1, 0, 0, 0, -0.0814515, 0.996677, 0, -0.996677, -0.08145
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -3, 1, 0)
 direction = "west"
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.984307, 0.176466, 0, -0.176466, 0.984307, 0, 7, 3.90323)
-
 [connection signal="mv_arrow_selected" from="MovementArrow" to="PlayerCharacter" method="_mv_arrow_selected"]
+
+[editable path="PlayerCharacter"]
