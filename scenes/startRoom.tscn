@@ -65,7 +65,6 @@ transform = Transform3D(0.645458, -0.37495, 0.66543, 0, 0.871214, 0.490904, -0.7
 fov = 89.5867
 
 [node name="CameraSpotlight" type="SpotLight3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Wood-structure" type="MeshInstance3D" parent="."]
 mesh = ExtResource("3_qwvjf")
