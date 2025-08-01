@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmd6yhub41tso"]
+
+[ext_resource type="PackedScene" uid="uid://bua1t1qlhqo1b" path="res://scenes/player_character.tscn" id="1_28vfl"]
+[ext_resource type="PackedScene" uid="uid://c63muarqptymh" path="res://scenes/movement_arrow.tscn" id="2_dlbsh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xg71u"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_82kjd"]
+size = Vector2(10, 10)
+
+[node name="DevLevel0" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.455, 0)
+shape = SubResource("BoxShape3D_xg71u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_82kjd")
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("1_28vfl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.96324, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0814515, 0.996677, 0, -0.996677, -0.0814515, 0, 7.67276, -0.117107)
+
+[node name="MovementArrow" parent="." instance=ExtResource("2_dlbsh")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -3, 1, 0)
+direction = "west"
+
+[connection signal="mv_arrow_selected" from="MovementArrow" to="PlayerCharacter" method="_mv_arrow_selected"]
+
+[editable path="PlayerCharacter"]
