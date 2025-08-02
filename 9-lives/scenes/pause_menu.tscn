@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://de86h7v2fp3ji"]
+
+[ext_resource type="Script" path="res://scripts/pauseMenu.gd" id="1_xrjbc"]
+[ext_resource type="Shader" path="res://assets/pause_menu.gdshader" id="2_tnoh7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_td8tu"]
+shader = ExtResource("2_tnoh7")
+shader_parameter/amount = 1.0
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xrjbc")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 250.0
+offset_right = 900.0
+offset_bottom = 351.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="MainMenu" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_td8tu")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 644.0
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

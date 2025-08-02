@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://birq3dd6mtiyl"]
+
+[ext_resource type="ArrayMesh" uid="uid://cqa3u12xclmj" path="res://assets/floor.obj" id="1_dfg3w"]
+[ext_resource type="ArrayMesh" uid="uid://dwj3bc8fbexob" path="res://assets/floor-detail.obj" id="2_p50fh"]
+[ext_resource type="ArrayMesh" uid="uid://dbg1gdwefht6i" path="res://assets/wood-structure.obj" id="3_qwvjf"]
+[ext_resource type="PackedScene" uid="uid://dpi3jkpcs5ipq" path="res://scenes/cat.tscn" id="4_4okkp"]
+[ext_resource type="PackedScene" uid="uid://cd5npicxlcsvf" path="res://scenes/MovementArrow.tscn" id="5_mx4qx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_exl1l"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_muupa"]
+sky_material = SubResource("ProceduralSkyMaterial_exl1l")
+
+[sub_resource type="Environment" id="Environment_orukt"]
+background_mode = 1
+sky = SubResource("Sky_muupa")
+tonemap_mode = 2
+
+[node name="StartRoom" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_orukt")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.00523376, 2.02025, 7.82013e-05)
+
+[node name="floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = ExtResource("1_dfg3w")
+
+[node name="floor2" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+mesh = ExtResource("1_dfg3w")
+
+[node name="floor3" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+mesh = ExtResource("2_p50fh")
+
+[node name="floor4" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+mesh = ExtResource("2_p50fh")
+
+[node name="floor5" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = ExtResource("1_dfg3w")
+
+[node name="floor6" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+mesh = ExtResource("1_dfg3w")
+
+[node name="floor7" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2)
+mesh = ExtResource("2_p50fh")
+
+[node name="floor8" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+mesh = ExtResource("1_dfg3w")
+
+[node name="floor9" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
+mesh = ExtResource("1_dfg3w")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.645458, -0.37495, 0.66543, 0, 0.871214, 0.490904, -0.763796, -0.316858, 0.562332, 1.56313, 1.71342, 1.34085)
+fov = 89.5867
+
+[node name="CameraSpotlight" type="SpotLight3D" parent="Camera3D"]
+
+[node name="Wood-structure" type="MeshInstance3D" parent="."]
+mesh = ExtResource("3_qwvjf")
+
+[node name="9lives" parent="." instance=ExtResource("4_4okkp")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.116394, 0.108989, 0.235509)
+
+[node name="MovementArrow" parent="." instance=ExtResource("5_mx4qx")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1, 0.16324, 1)
+
+[connection signal="mv_arrow_selected" from="MovementArrow" to="9lives" method="_mv_arrow_selected"]
