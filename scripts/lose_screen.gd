@@ -6,9 +6,10 @@ func _ready() -> void:
 func _on_new_game_pressed() -> void:
 	AudioManager.chirp.play()
 	AudioManager.falling.play()
+	SceneTransition.change_scene_to_file("res://scenes/startRoom.tscn")
 	await AudioManager.chirp.finished
 	await AudioManager.falling.finished
-	SceneTransition.change_scene_to_file("res://scenes/startRoom.tscn")
+	
 	Game.new = true
 	RoomGen.resetRooms()
 	Game.lives = 9

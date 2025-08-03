@@ -3,15 +3,17 @@ extends Control
 var goalie
 
 func _on_new_game_pressed():
+	print("NEW GAME")
 	goalie = RoomGen.randomStepGoal()
 	Game.lives = 9
 	AudioManager.ui.play()
+	SceneTransition.change_scene_to_file("res://scenes/startRoom.tscn")
 	await AudioManager.ui.finished
 	AudioManager.chirp.play()
 	AudioManager.falling.play()
 	await AudioManager.chirp.finished
 	await AudioManager.falling.finished
-	SceneTransition.change_scene_to_file("res://scenes/startRoom.tscn")
+	
 	Game.new = true
 	
 	
