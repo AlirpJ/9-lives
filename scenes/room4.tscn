@@ -62,7 +62,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 mesh = ExtResource("1_ft3i3")
 
 [node name="floor6" type="MeshInstance3D" parent="floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1404, 0, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9404, 0, -1)
 mesh = ExtResource("1_ft3i3")
 
 [node name="floor7" type="MeshInstance3D" parent="floor"]
@@ -70,7 +70,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2)
 mesh = ExtResource("2_v0l6e")
 
 [node name="floor8" type="MeshInstance3D" parent="floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.19188)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.00251)
 mesh = ExtResource("1_ft3i3")
 
 [node name="floor9" type="MeshInstance3D" parent="floor"]
