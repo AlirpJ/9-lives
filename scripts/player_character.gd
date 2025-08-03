@@ -41,6 +41,7 @@ func _physics_process(delta: float) -> void:
 	
 	if moving:
 		global_position = lerp(global_position, mv_endpoint, SPEED)
+		look_at(-mv_endpoint)
 		if global_position == mv_endpoint:
 			moving = false
 
