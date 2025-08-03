@@ -64,6 +64,9 @@ func _process(delta):
 		print("Options: ",rooms[currentRoom])
 
 func roomGen(x,y): #roomGen(x,y) takes x: last room ID, and y: new room ID
+	# Start room
+	if y <= 1:
+		rooms[0] = [1,2,3,4]
 	if !(rooms[y].has(-1)):
 		"been here!"
 		currentRoom = y
@@ -74,9 +77,7 @@ func roomGen(x,y): #roomGen(x,y) takes x: last room ID, and y: new room ID
 	
 
 	
-	# Start room
-	if y <= 0:
-		rooms[0] = [1,2,3,4]
+
 	
 	# Check for victory
 	if getRoomType(y) == "victory":
@@ -174,7 +175,31 @@ func popper(removeMe):
 	#foundRooms[removeMe] = rooms[removeMe]
 	return popped
 
-
+func resetRooms():
+	rooms = {
+# tileID 	: paths
+	0			:	[1,2,3,4],
+	1			:	[-1,-1,-1,-1],
+	2			:	[-1,-1,-1],
+	3			:	[-1,-1,-1,-1],
+	4			:	[-1,-1,-1,-1],
+	5			:	[-1,-1,-1,-1],
+	6			:	[-1,-1,-1],
+	101			:	[-1,-1],
+	102			:	[-1,-1,-1],
+	103			:	[-1,-1],
+	104			:	[-1,-1,-1,-1],
+	200			:	[-1,-1],
+	202			:	[-1,-1],
+	203			:	[-1,-1],
+	204			:	[-1,-1],
+	300			:	[-1],
+	301			:	[-1],
+	302			:	[-1],
+	303			:	[-1],
+	304			:	[-1],
+	999			:	[-1]
+	}
 
 
 # Step Helper Functions

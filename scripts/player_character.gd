@@ -13,6 +13,7 @@ var mv_endpoint
 func _physics_process(delta: float) -> void:
 	if Game.light <= 0.1:
 		die()
+		RoomGen.resetRooms()
 	# NOTE: Temporary CBVC. Please remove if we're not using buttons for input.
 	
 	# Add the gravity.
