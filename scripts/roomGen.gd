@@ -237,7 +237,7 @@ func randomProgress():
 
 func randomStepGoal():
 	randomize()
-	goal = rng.randi_range(2,11)
+	goal = rng.randi_range(6,13)
 	return goal
 
 func pickRandomPath(max):
