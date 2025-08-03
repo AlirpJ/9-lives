@@ -10,11 +10,16 @@ signal mv_arrow_selected
 @onready var movement_arrow_4: StaticBody3D = $"../MovementArrow4"
 
 var choice
+var lastRoom
+var nextRoom
 
 func newRoom(roomChoice):
 	print(roomChoice)
+	RoomGen.roomGen(RoomGen.currentRoom,roomChoice)
 	var finalChoice = "res://scenes/room"+str(roomChoice)+".tscn"
 	SceneTransition.change_scene_to_file(finalChoice)
+	
+	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -26,6 +31,7 @@ func _process(delta: float) -> void:
 func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	
 	if event is InputEventMouseButton and Input.is_action_just_pressed("MouseSelect"):
+		print("moving")
 		mv_arrow_selected.emit(self.global_position)
 		var maxVal = RoomGen.rooms[RoomGen.currentRoom].size()
 		

@@ -59,18 +59,20 @@ var foundRooms = {}
 # roomGen is called when you click to enter a new room
 func _process(delta):
 	if Input.is_action_just_pressed("jump"):
-		if newGame:
-			roomGen(-1,currentRoom)
-			print("Current Room: ",currentRoom)
-			print("Options: ",rooms[currentRoom])
-			print("---")
-			newGame = false
-		else:
-			roomGen(currentRoom,getRoom(currentRoom)[0]) #take the first path out of your room
-			currentRoom = getRoom(currentRoom)[0] 
-			print("Current Room: ",currentRoom)
-			print("New Options: ",rooms[currentRoom])
-			print("---")
+		print("Current Room: ",currentRoom)
+		print("Options: ",rooms[currentRoom])
+		#if newGame:
+			#roomGen(-1,currentRoom)
+			#print("Current Room: ",currentRoom)
+			#print("Options: ",rooms[currentRoom])
+			#print("---")
+			#newGame = false
+		#else:
+			#roomGen(currentRoom,getRoom(currentRoom)[0]) #take the first path out of your room
+			#currentRoom = getRoom(currentRoom)[0] 
+			#print("Current Room: ",currentRoom)
+			#print("New Options: ",rooms[currentRoom])
+			#print("---")
 
 func roomGen(x,y): #roomGen(x,y) takes x: last room ID, and y: new room ID
 	if !(rooms[y].has(-1)):
@@ -81,10 +83,7 @@ func roomGen(x,y): #roomGen(x,y) takes x: last room ID, and y: new room ID
 	z = rooms.get(y).size() # Get the number of exits to a room given its ID
 	path0 = x # path0 will ALWAYS take you back where you came
 	
-	# Check for resource
-	if Game.resource < 1:
-		pass
-		# Lose 1 life
+
 	
 	# Start room
 	if y <= 0:
@@ -142,7 +141,7 @@ func roomGen(x,y): #roomGen(x,y) takes x: last room ID, and y: new room ID
 					getRoom(y)[a] = tempVar
 					popper(tempVar)
 					
-					
+	currentRoom = y				
 
 
 
