@@ -14,7 +14,6 @@ var lastRoom
 var nextRoom
 
 func newRoom(roomChoice):
-	print(roomChoice)
 	if(roomChoice == 0):
 		var finalChoice = "res://scenes/startRoom.tscn"
 		SceneTransition.change_scene_to_file(finalChoice)

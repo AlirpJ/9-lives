@@ -6,7 +6,7 @@ var randomPath = -1
 
 
 var steps = 0
-var goal = 99999
+var goal = 4
 var popped
 var z = 0
 
@@ -60,11 +60,23 @@ var foundRooms = {}
 
 # roomGen is called when you click to enter a new room
 func _process(delta):
+	if steps == 9999:
+		resetRooms()
+		SceneTransition.change_scene_to_file("res://scenes/victory_screen.tscn")
 	if Input.is_action_just_pressed("jump"):
 		print("Current Room: ",currentRoom)
 		print("Options: ",rooms[currentRoom])
+		print("Steps: ",steps)
+		print("Goal: ",goal)
+		print("-----")
 
 func roomGen(x,y): #roomGen(x,y) takes x: last room ID, and y: new room ID
+	incrementSteps()
+	if steps >= goal:
+		steps = 9999
+		win()
+		return
+		
 	# Start room
 	if y <= 1:
 		rooms[y] = [1,2,3,4]
@@ -78,13 +90,6 @@ func roomGen(x,y): #roomGen(x,y) takes x: last room ID, and y: new room ID
 	path0 = x # path0 will ALWAYS take you back where you came
 	
 
-	
-
-	
-	# Check for victory
-	if getRoomType(y) == "victory":
-		SceneTransition.change_scene_to_file("res://scenes/victory_screen.tscn")
-		# Go to Win Screen!
 	
 	# Loop Logic
 	if getRoomType(y) == "loop":
@@ -108,6 +113,7 @@ func roomGen(x,y): #roomGen(x,y) takes x: last room ID, and y: new room ID
 	
 	# Progress Logic
 	if getRoomType(y) == "progress":
+		incrementSteps()
 		lastProgress = y
 		# randomly assign non-progress rooms
 		for a in getRoom(y):
@@ -117,14 +123,14 @@ func roomGen(x,y): #roomGen(x,y) takes x: last room ID, and y: new room ID
 	
 	# Corridor logic
 	if getRoomType(y) == "corridor":
-		#for a in getRoom(y):
-			#a = -1
-		if steps == goal:
-			var randRoom = randomProgressRoom(z)
-			var assignMe = pickRandomPath(z)
-			# randomly assign a progress room
-			getRoom(y).set(assignMe,randRoom)
-			popper(randRoom)
+
+		if steps >= goal:
+			pass
+			#var randRoom = randomProgressRoom(z)
+			#var assignMe = pickRandomPath(z)
+			## randomly assign a progress room
+			#getRoom(y).set(assignMe,randRoom)
+			#popper(randRoom)
 		else:
 			# randomly assign non-progress rooms
 			for a in range(len(getRoom(y))):
@@ -138,7 +144,10 @@ func roomGen(x,y): #roomGen(x,y) takes x: last room ID, and y: new room ID
 
 
 
-
+func win():
+	var y = currentRoom
+	for a in range(len(getRoom(y))):
+		getRoom(y)[a] = 999
 
 
 ### HELPER FUNCTIONS ###
@@ -178,6 +187,9 @@ func popper(removeMe):
 	return popped
 
 func resetRooms():
+	Game.light = 1
+	steps = 0
+	randomStepGoal()
 	availableRooms = rooms.keys()
 	rooms = {
 # tileID 	: paths
@@ -222,6 +234,11 @@ func randomProgress():
 	randomize()
 	randomNum = rng.randi_range(0,9)
 	return randomNum
+
+func randomStepGoal():
+	randomize()
+	goal = rng.randi_range(2,11)
+	return goal
 
 func pickRandomPath(max):
 	randomize()
