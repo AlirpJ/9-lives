@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://crqptpvmhx3rg"
-path="res://.godot/imported/9lives-cat.blend-3d1f5f8ba5ee294151478ade8eb721b7.scn"
+uid="uid://ddyyewnbvk8le"
+path="res://.godot/imported/9lives.blend-6940fa7b32624d46db81be52f10c8f2c.scn"
 
 [deps]
 
-source_file="res://assets/9lives-cat.blend"
-dest_files=["res://.godot/imported/9lives-cat.blend-3d1f5f8ba5ee294151478ade8eb721b7.scn"]
+source_file="res://9lives.blend"
+dest_files=["res://.godot/imported/9lives.blend-6940fa7b32624d46db81be52f10c8f2c.scn"]
 
 [params]
 

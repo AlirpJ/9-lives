@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgm4kdlgwqcc"]
+[gd_scene load_steps=8 format=3 uid="uid://cgm4kdlgwqcc"]
 
 [ext_resource type="Script" path="res://scripts/mainMenu.gd" id="1_u1l2x"]
+[ext_resource type="Texture2D" uid="uid://d3hwbg0fg1jd7" path="res://assets/art/9 lives menu NO buttons.png" id="2_dauky"]
+[ext_resource type="Texture2D" uid="uid://jedanbjey8tg" path="res://assets/art/new game button.png" id="3_vv7qd"]
+[ext_resource type="Texture2D" uid="uid://cwxj6cyo7vers" path="res://assets/art/new game HOVER.png" id="4_a3jcq"]
+[ext_resource type="Texture2D" uid="uid://cajvx2o1pv6r3" path="res://assets/art/resume button.png" id="4_jguik"]
+[ext_resource type="Texture2D" uid="uid://dx5x0ghorht6e" path="res://assets/art/quit button.png" id="5_rfoen"]
+[ext_resource type="Texture2D" uid="uid://bgintpe2vj1jd" path="res://assets/art/quit HOVER.png" id="7_msntr"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -11,32 +17,39 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u1l2x")
 
+[node name="9LivesMenuNoButtons" type="Sprite2D" parent="."]
+process_mode = 4
+position = Vector2(480, 270)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_dauky")
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 300.0
-offset_top = 250.0
-offset_right = 900.0
-offset_bottom = 351.0
+offset_left = 30.0
+offset_top = 230.0
+offset_right = 825.0
+offset_bottom = 545.0
+scale = Vector2(0.6, 0.6)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 50
 
-[node name="NewGame" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="NewGame" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "New Game"
+texture_normal = ExtResource("3_vv7qd")
+texture_hover = ExtResource("4_a3jcq")
 
-[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="ResumeGame" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
-text = "Credits"
+texture_normal = ExtResource("4_jguik")
 
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Quit" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Options"
-
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Quit"
+texture_normal = ExtResource("5_rfoen")
+texture_hover = ExtResource("7_msntr")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ResumeGame" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
