@@ -4,7 +4,7 @@ var rng = RandomNumberGenerator.new()
 var randomNum = -1
 var randomPath = -1
 
-var availableRooms = [0,1,2,3,4,5,6,101,104,201,202,203,204,301,302,303,304,999]
+
 var steps = 0
 var goal = 99999
 var popped
@@ -47,6 +47,7 @@ var rooms = {
 999			:	[-1]
 }
 
+var availableRooms = rooms.keys()
 var foundRooms = {}
 	
 # Rooms:
@@ -66,13 +67,14 @@ func _process(delta):
 func roomGen(x,y): #roomGen(x,y) takes x: last room ID, and y: new room ID
 	# Start room
 	if y <= 1:
-		rooms[0] = [1,2,3,4]
+		rooms[y] = [1,2,3,4]
 	if !(rooms[y].has(-1)):
 		"been here!"
 		currentRoom = y
 		return
 	
 	z = rooms.get(y).size() # Get the number of exits to a room given its ID
+	#unused:
 	path0 = x # path0 will ALWAYS take you back where you came
 	
 
@@ -81,7 +83,7 @@ func roomGen(x,y): #roomGen(x,y) takes x: last room ID, and y: new room ID
 	
 	# Check for victory
 	if getRoomType(y) == "victory":
-		pass
+		SceneTransition.change_scene_to_file("res://scenes/victory_screen.tscn")
 		# Go to Win Screen!
 	
 	# Loop Logic
@@ -176,6 +178,7 @@ func popper(removeMe):
 	return popped
 
 func resetRooms():
+	availableRooms = rooms.keys()
 	rooms = {
 # tileID 	: paths
 	0			:	[1,2,3,4],

@@ -15,9 +15,13 @@ var nextRoom
 
 func newRoom(roomChoice):
 	print(roomChoice)
-	RoomGen.roomGen(RoomGen.currentRoom,roomChoice)
-	var finalChoice = "res://scenes/room"+str(roomChoice)+".tscn"
-	SceneTransition.change_scene_to_file(finalChoice)
+	if(roomChoice == 0):
+		var finalChoice = "res://scenes/startRoom.tscn"
+		SceneTransition.change_scene_to_file(finalChoice)
+	else:
+		RoomGen.roomGen(RoomGen.currentRoom,roomChoice)
+		var finalChoice = "res://scenes/room"+str(roomChoice)+".tscn"
+		SceneTransition.change_scene_to_file(finalChoice)
 	
 	
 # Called when the node enters the scene tree for the first time.
