@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://kxub388wcc7w"]
+
+[ext_resource type="Script" path="res://scripts/lose_screen.gd" id="1_rewib"]
+[ext_resource type="Texture2D" uid="uid://c0d7wvu1l8lry" path="res://assets/art/loss screen NO buttons.png" id="1_w5f2r"]
+[ext_resource type="Texture2D" uid="uid://jedanbjey8tg" path="res://assets/art/new game button.png" id="3_lpelv"]
+[ext_resource type="Texture2D" uid="uid://cwxj6cyo7vers" path="res://assets/art/new game HOVER.png" id="4_rdyro"]
+[ext_resource type="Texture2D" uid="uid://fmtyxxqcjmug" path="res://assets/art/menu button.png" id="4_re5fo"]
+[ext_resource type="Texture2D" uid="uid://d0fi87yg7f2yo" path="res://assets/art/menu HOVER.png" id="6_hci3n"]
+
+[node name="LoseScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rewib")
+
+[node name="LoseScreen" type="Sprite2D" parent="."]
+process_mode = 4
+position = Vector2(480, 270)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_w5f2r")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 366.0
+offset_right = 1068.0
+offset_bottom = 681.0
+scale = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="NewGame" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_lpelv")
+texture_hover = ExtResource("4_rdyro")
+
+[node name="Menu" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_re5fo")
+texture_hover = ExtResource("6_hci3n")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu" to="." method="_on_quit_pressed"]
