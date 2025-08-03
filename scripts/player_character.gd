@@ -92,3 +92,7 @@ func _on_movement_arrow_4_mv_arrow_selected(endpoint: Vector3) -> void:
 	moving = true
 	mv_endpoint = endpoint
 	light.modify_light_energy(removeLight)
+
+
+func _on_light_collect_mv_arrow_selected() -> void:
+	pass # Replace with function body.

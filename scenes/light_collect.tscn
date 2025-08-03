@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvv08o01y5b3p"]
+
+[ext_resource type="Script" path="res://scripts/lightCollect.gd" id="1_1yu28"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mvnwp"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1u1f6"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_y0yg8"]
+
+[node name="lightCollect" type="StaticBody3D"]
+script = ExtResource("1_1yu28")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_mvnwp")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_1u1f6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_y0yg8")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_energy = 0.5
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

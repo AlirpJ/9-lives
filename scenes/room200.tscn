@@ -11,7 +11,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bbmuiouqpb1ec" path="res://assets/wall-window-barred-medium.obj" id="9_8q6nu"]
 [ext_resource type="ArrayMesh" uid="uid://ddplpd5ymf3cr" path="res://assets/wall-window-cutout-large.obj" id="10_7u48q"]
 [ext_resource type="PackedScene" uid="uid://dpi3jkpcs5ipq" path="res://scenes/cat.tscn" id="11_btt2j"]
-[ext_resource type="PackedScene" uid="uid://c63muarqptymh" path="res://scenes/movement_arrow.tscn" id="12_ekdbu"]
+[ext_resource type="PackedScene" uid="uid://hcjhejouco77" path="res://scenes/movement_arrow.tscn" id="12_ekdbu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_exl1l"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

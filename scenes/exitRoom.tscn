@@ -1,10 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://ciap8r1vkxbh8"]
+[gd_scene load_steps=18 format=3 uid="uid://c54r4xjkbdjxv"]
 
 [ext_resource type="ArrayMesh" uid="uid://cqa3u12xclmj" path="res://assets/floor.obj" id="1_d28b4"]
 [ext_resource type="ArrayMesh" uid="uid://dbg1gdwefht6i" path="res://assets/wood-structure.obj" id="3_djqgt"]
 [ext_resource type="Texture2D" uid="uid://8krd45dmhfqq" path="res://assets/colormap.png" id="4_3ym6s"]
 [ext_resource type="ArrayMesh" uid="uid://cqiuxvs2ufjj" path="res://assets/dirt.obj" id="5_buvep"]
-[ext_resource type="Material" uid="uid://bc0wgw2pwvnut" path="res://assets/Textures/path_dark.tres" id="6_o2ss5"]
+[ext_resource type="Material" path="res://assets/Textures/path_dark.tres" id="6_o2ss5"]
 [ext_resource type="ArrayMesh" uid="uid://buxn5eygh3ks2" path="res://assets/water.obj" id="7_ngga3"]
 [ext_resource type="Texture2D" uid="uid://djt4lf45vxfay" path="res://assets/Textures/colormap_prototype.png" id="8_w8lm0"]
 [ext_resource type="ArrayMesh" uid="uid://bbmuiouqpb1ec" path="res://assets/wall-window-barred-medium.obj" id="9_pi3fe"]

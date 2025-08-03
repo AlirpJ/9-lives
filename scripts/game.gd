@@ -73,18 +73,3 @@ func loadGame():
 	#Dialogic.timeline_ended.connect(ended)
 	##ended()
 	##Dialogic.timeline_ended.disconnect(_on_timeline_ended)
-
-
-
-# Characters
-# Character dev name : [Location, State]
-var CharState = {
-	"sunny" : ['outside1',0],
-	"mail" : ['outside1',0]
-}
-# Locations
-# Location name : times entered
-var locCounter = {
-	"all" : 0,
-	"outside1" : 0
-}
