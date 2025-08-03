@@ -31,7 +31,6 @@ func _process(delta: float) -> void:
 func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	
 	if event is InputEventMouseButton and Input.is_action_just_pressed("MouseSelect"):
-		print("moving")
 		mv_arrow_selected.emit(self.global_position)
 		var maxVal = RoomGen.rooms[RoomGen.currentRoom].size()
 		
@@ -61,5 +60,4 @@ func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, 
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	# TODO: Transition to next area.
-	#print(movement_arrow.name) 
 	pass

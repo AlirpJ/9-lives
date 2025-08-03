@@ -54,7 +54,6 @@ func loadGame():
 	
 #func DialogicSignal(argument:String):
 	#if argument == "end":
-		#print("Signal recieved, ending.")
 		#dx = false
 
 #func loadDia(x,num):

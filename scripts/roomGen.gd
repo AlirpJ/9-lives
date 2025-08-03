@@ -61,18 +61,6 @@ func _process(delta):
 	if Input.is_action_just_pressed("jump"):
 		print("Current Room: ",currentRoom)
 		print("Options: ",rooms[currentRoom])
-		#if newGame:
-			#roomGen(-1,currentRoom)
-			#print("Current Room: ",currentRoom)
-			#print("Options: ",rooms[currentRoom])
-			#print("---")
-			#newGame = false
-		#else:
-			#roomGen(currentRoom,getRoom(currentRoom)[0]) #take the first path out of your room
-			#currentRoom = getRoom(currentRoom)[0] 
-			#print("Current Room: ",currentRoom)
-			#print("New Options: ",rooms[currentRoom])
-			#print("---")
 
 func roomGen(x,y): #roomGen(x,y) takes x: last room ID, and y: new room ID
 	if !(rooms[y].has(-1)):

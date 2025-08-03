@@ -11,6 +11,8 @@ var mv_endpoint
 @onready var light = $Light
 
 func _physics_process(delta: float) -> void:
+	if Game.light <= 0.1:
+		die()
 	# NOTE: Temporary CBVC. Please remove if we're not using buttons for input.
 	
 	# Add the gravity.
@@ -46,6 +48,10 @@ func _physics_process(delta: float) -> void:
 		if global_position == mv_endpoint:
 			moving = false
 			AudioManager.movement.stop()
+
+func die():
+	SceneTransition.change_scene_to_file("res://scenes/lose_screen.tscn")
+	Game.light = 1
 
 # INFO: Connects to movement_arrow signal.
 # actually use the function(s) under this one lol

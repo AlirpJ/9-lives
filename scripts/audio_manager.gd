@@ -15,6 +15,6 @@ extends Node
 @onready var ui: AudioStreamPlayer = $UI
 
 func start_bgm():
-	bgm.play()
+	#bgm.play()
 	water_drip.play()
 	
