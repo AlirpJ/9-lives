@@ -21,6 +21,12 @@ Game="*res://scripts/game.gd"
 SceneTransition="*res://scenes/scene_transition.tscn"
 RoomGen="*res://scripts/roomGen.gd"
 
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=540
+window/stretch/mode="canvas_items"
+
 [input]
 
 jump={

@@ -21,6 +21,7 @@ process_mode = 4
 position = Vector2(480, 270)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_w5f2r")
+metadata/_edit_lock_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
