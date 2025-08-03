@@ -42,8 +42,10 @@ func _physics_process(delta: float) -> void:
 	if moving:
 		global_position = lerp(global_position, mv_endpoint, SPEED)
 		look_at(-mv_endpoint)
+		AudioManager.movement.play()
 		if global_position == mv_endpoint:
 			moving = false
+			AudioManager.movement.stop()
 
 # INFO: Connects to movement_arrow signal.
 # actually use the function(s) under this one lol

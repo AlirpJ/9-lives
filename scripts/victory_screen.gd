@@ -2,6 +2,8 @@ extends Control
 
 func _on_play_again_pressed() -> void:
 	SceneTransition.change_scene_to_file("res://scenes/startRoom.tscn")
+	AudioManager.chirp.play()
+	AudioManager.falling.play()
 	Game.new = true
 	#Game.state = 0
 

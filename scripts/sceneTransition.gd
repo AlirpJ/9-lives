@@ -17,6 +17,8 @@ func change_scene_to_file(target: String) -> void:
 	#Game.traveling = true
 	#print(Game.loadGame())
 	
+	AudioManager.start_bgm()
+	
 	# Change Scene
 	get_tree().change_scene_to_file(target)
 	

@@ -15,11 +15,16 @@ run/main_scene="res://scenes/start_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout=""
+
 [autoload]
 
 Game="*res://scripts/game.gd"
 SceneTransition="*res://scenes/scene_transition.tscn"
 RoomGen="*res://scripts/roomGen.gd"
+AudioManager="*res://scenes/audio_manager.tscn"
 
 [display]
 

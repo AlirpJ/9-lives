@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://jac1luqpi8r"
+path="res://.godot/imported/Light sound.mp3-c7d92cae44a6a525eb3d9ae7131cc39d.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/Light sound.mp3"
+dest_files=["res://.godot/imported/Light sound.mp3-c7d92cae44a6a525eb3d9ae7131cc39d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

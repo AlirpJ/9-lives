@@ -1,0 +1,82 @@
+[gd_scene load_steps=15 format=3 uid="uid://c3wkbltp5wmx8"]
+
+[ext_resource type="Script" path="res://scripts/audio_manager.gd" id="1_h301t"]
+[ext_resource type="AudioStream" uid="uid://dipu84r5tgexw" path="res://assets/sound/jump.mp3" id="2_jt08q"]
+[ext_resource type="AudioStream" uid="uid://qjxwa7op1ht1" path="res://assets/sound/chirp.mp3" id="3_mnaqp"]
+[ext_resource type="AudioStream" uid="uid://dpnx5j5jfdj4q" path="res://assets/sound/bgm.mp3" id="4_07040"]
+[ext_resource type="AudioStream" uid="uid://derxdeyqypf38" path="res://assets/sound/Low notes.mp3" id="5_35ilq"]
+[ext_resource type="AudioStream" uid="uid://c58thacmh8sr7" path="res://assets/LongDrip.mp3" id="6_q6j31"]
+[ext_resource type="AudioStream" uid="uid://bxwfa84jsqyf1" path="res://assets/sound/whisper1.mp3" id="7_mfk0o"]
+[ext_resource type="AudioStream" uid="uid://ceed68250xwv4" path="res://assets/sound/whisper2.mp3" id="8_o6118"]
+[ext_resource type="AudioStream" uid="uid://cliea7620ptbh" path="res://assets/sound/WaterEchoes.wav" id="9_q12v1"]
+[ext_resource type="AudioStream" uid="uid://cvc220gvqvy4p" path="res://assets/sound/light sound 2.mp3" id="10_jyeu7"]
+[ext_resource type="AudioStream" uid="uid://bppaivpfnbike" path="res://assets/sound/meow3.mp3" id="11_grupk"]
+[ext_resource type="AudioStream" uid="uid://dt8yr2e3wdcps" path="res://assets/sound/clothRustle.mp3" id="12_16wej"]
+[ext_resource type="AudioStream" uid="uid://662ssx7338un" path="res://assets/sound/UI.wav" id="13_skj1o"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_jywtm"]
+shuffle = true
+stream_count = 2
+stream_0 = ExtResource("7_mfk0o")
+stream_1 = ExtResource("8_o6118")
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_h301t")
+
+[node name="Falling" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jt08q")
+volume_db = -10.0
+bus = &"sfx"
+
+[node name="Chirp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mnaqp")
+bus = &"sfx"
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_07040")
+volume_db = -15.0
+bus = &"music"
+
+[node name="BellJingle" type="AudioStreamPlayer" parent="."]
+bus = &"sfx"
+
+[node name="ClockTIcking" type="AudioStreamPlayer" parent="."]
+bus = &"sfx"
+
+[node name="Death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_35ilq")
+bus = &"sfx"
+
+[node name="WaterDrip" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_q6j31")
+volume_db = -50.0
+bus = &"sfx"
+
+[node name="Whispers" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_jywtm")
+volume_db = -20.0
+bus = &"sfx"
+
+[node name="Echoes" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_q12v1")
+volume_db = -25.298
+pitch_scale = 0.96
+bus = &"sfx"
+
+[node name="Warning" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_jyeu7")
+volume_db = -10.0
+bus = &"sfx"
+
+[node name="LightAcquired" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_grupk")
+bus = &"sfx"
+
+[node name="Movement" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_16wej")
+volume_db = -10.0
+
+[node name="UI" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_skj1o")
+volume_db = -5.0
+pitch_scale = 1.27
