@@ -1,13 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://nv6x3ab2rsd1"]
+[gd_scene load_steps=14 format=3 uid="uid://bghj078qisoba"]
 
-[ext_resource type="ArrayMesh" uid="uid://cqa3u12xclmj" path="res://assets/floor.obj" id="1_hbfvh"]
-[ext_resource type="ArrayMesh" uid="uid://dwj3bc8fbexob" path="res://assets/floor-detail.obj" id="2_vhicj"]
-[ext_resource type="ArrayMesh" uid="uid://dbg1gdwefht6i" path="res://assets/wood-structure.obj" id="3_bs40h"]
-[ext_resource type="Texture2D" uid="uid://8krd45dmhfqq" path="res://assets/colormap.png" id="4_yijuu"]
-[ext_resource type="ArrayMesh" uid="uid://cqiuxvs2ufjj" path="res://assets/dirt.obj" id="5_3sewg"]
-[ext_resource type="Material" path="res://assets/Textures/path_dark.tres" id="6_nvlju"]
-[ext_resource type="PackedScene" uid="uid://dpi3jkpcs5ipq" path="res://scenes/cat.tscn" id="7_a3x43"]
-[ext_resource type="PackedScene" uid="uid://c63muarqptymh" path="res://scenes/movement_arrow.tscn" id="8_mi4c3"]
+[ext_resource type="ArrayMesh" uid="uid://cqa3u12xclmj" path="res://assets/floor.obj" id="1_ft3i3"]
+[ext_resource type="ArrayMesh" uid="uid://dwj3bc8fbexob" path="res://assets/floor-detail.obj" id="2_v0l6e"]
+[ext_resource type="ArrayMesh" uid="uid://dbg1gdwefht6i" path="res://assets/wood-structure.obj" id="3_m4dk4"]
+[ext_resource type="Texture2D" uid="uid://8krd45dmhfqq" path="res://assets/colormap.png" id="4_eia3i"]
+[ext_resource type="ArrayMesh" uid="uid://cqiuxvs2ufjj" path="res://assets/dirt.obj" id="5_a7l7t"]
+[ext_resource type="Material" path="res://assets/Textures/path_dark.tres" id="6_k2yjm"]
+[ext_resource type="PackedScene" uid="uid://dpi3jkpcs5ipq" path="res://scenes/cat.tscn" id="7_hh12p"]
+[ext_resource type="PackedScene" uid="uid://c63muarqptymh" path="res://scenes/movement_arrow.tscn" id="8_fr6bh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_exl1l"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -22,7 +22,7 @@ sky = SubResource("Sky_muupa")
 tonemap_mode = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3fwr"]
-albedo_texture = ExtResource("4_yijuu")
+albedo_texture = ExtResource("4_eia3i")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vnavr"]
 albedo_color = Color(0, 0, 0, 1)
@@ -43,184 +43,184 @@ fov = 89.5867
 
 [node name="floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
-mesh = ExtResource("1_hbfvh")
+mesh = ExtResource("1_ft3i3")
 
 [node name="floor2" type="MeshInstance3D" parent="floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
-mesh = ExtResource("1_hbfvh")
+mesh = ExtResource("1_ft3i3")
 
 [node name="floor3" type="MeshInstance3D" parent="floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
-mesh = ExtResource("2_vhicj")
+mesh = ExtResource("2_v0l6e")
 
 [node name="floor4" type="MeshInstance3D" parent="floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
-mesh = ExtResource("2_vhicj")
+mesh = ExtResource("2_v0l6e")
 
 [node name="floor5" type="MeshInstance3D" parent="floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
-mesh = ExtResource("1_hbfvh")
+mesh = ExtResource("1_ft3i3")
 
 [node name="floor6" type="MeshInstance3D" parent="floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
-mesh = ExtResource("1_hbfvh")
+mesh = ExtResource("1_ft3i3")
 
 [node name="floor7" type="MeshInstance3D" parent="floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2)
-mesh = ExtResource("2_vhicj")
+mesh = ExtResource("2_v0l6e")
 
 [node name="floor8" type="MeshInstance3D" parent="floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
-mesh = ExtResource("1_hbfvh")
+mesh = ExtResource("1_ft3i3")
 
 [node name="floor9" type="MeshInstance3D" parent="floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
-mesh = ExtResource("1_hbfvh")
+mesh = ExtResource("1_ft3i3")
 
 [node name="Wood-structure" type="MeshInstance3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 1.124, 0, 0, 0, 1, 0, 0, 0)
-mesh = ExtResource("3_bs40h")
+mesh = ExtResource("3_m4dk4")
 
 [node name="Wood-structure2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.124, 0, 0, 0, 4, 0, 0, 0)
-mesh = ExtResource("3_bs40h")
+mesh = ExtResource("3_m4dk4")
 
 [node name="Walls" type="Node3D" parent="."]
 
 [node name="Dirt" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1.1, 0, 0, 0, 1.251, 0, 0, 0, 1.1, -1, 0, 2)
 material_override = SubResource("StandardMaterial3D_k3fwr")
-mesh = ExtResource("5_3sewg")
+mesh = ExtResource("5_a7l7t")
 skeleton = NodePath("../..")
 
 [node name="Dirt2" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1.25, 0, 0, 0, 1.1, 0, 0, 2)
-mesh = ExtResource("5_3sewg")
+mesh = ExtResource("5_a7l7t")
 skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("6_nvlju")
+surface_material_override/0 = ExtResource("6_k2yjm")
 
 [node name="Dirt3" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1.1, 0, 0, 0, 1.251, 0, 0, 0, 1.1, 1, 0, 2)
 material_override = SubResource("StandardMaterial3D_k3fwr")
-mesh = ExtResource("5_3sewg")
+mesh = ExtResource("5_a7l7t")
 skeleton = NodePath("../..")
 
 [node name="Dirt7" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1.1, 0, 0, 0, 1.251, 0, 0, 0, 1.1, -1, 0, -2)
 material_override = SubResource("StandardMaterial3D_k3fwr")
-mesh = ExtResource("5_3sewg")
+mesh = ExtResource("5_a7l7t")
 skeleton = NodePath("../..")
 
 [node name="Dirt20" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1.1, 0, 0, 0, 1.251, 0, 0, 0, 1.1, -1.87397, 0, -2)
 material_override = SubResource("StandardMaterial3D_k3fwr")
-mesh = ExtResource("5_3sewg")
+mesh = ExtResource("5_a7l7t")
 skeleton = NodePath("../..")
 
 [node name="Dirt8" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1.25, 0, 0, 0, 1.1, 0, 0, -2)
-mesh = ExtResource("5_3sewg")
+mesh = ExtResource("5_a7l7t")
 skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("6_nvlju")
+surface_material_override/0 = ExtResource("6_k2yjm")
 
 [node name="Dirt9" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1.1, 0, 0, 0, 1.251, 0, 0, 0, 1.1, 1, 0, -2)
 material_override = SubResource("StandardMaterial3D_k3fwr")
-mesh = ExtResource("5_3sewg")
+mesh = ExtResource("5_a7l7t")
 skeleton = NodePath("../..")
 
 [node name="Dirt18" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1.1, 0, 0, 0, 1.251, 0, 0, 0, 1.1, 1.97031, 0, -2)
 material_override = SubResource("StandardMaterial3D_k3fwr")
-mesh = ExtResource("5_3sewg")
+mesh = ExtResource("5_a7l7t")
 skeleton = NodePath("../..")
 
 [node name="Dirt4" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1.1, 0, -3.90799e-15, 0, 1.251, 0, 3.90799e-15, 0, 1.1, -2, 0, -1)
 material_override = SubResource("StandardMaterial3D_k3fwr")
-mesh = ExtResource("5_3sewg")
+mesh = ExtResource("5_a7l7t")
 skeleton = NodePath("../..")
 
 [node name="Dirt5" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1.1, 0, 0, 0, 1.25, 0, 0, 0, 1, -2, 0, 0)
-mesh = ExtResource("5_3sewg")
+mesh = ExtResource("5_a7l7t")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_vnavr")
 
 [node name="Dirt6" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1.1, 0, -3.90799e-15, 0, 1.251, 0, 3.90799e-15, 0, 1.1, -2, 0, 1)
 material_override = SubResource("StandardMaterial3D_k3fwr")
-mesh = ExtResource("5_3sewg")
+mesh = ExtResource("5_a7l7t")
 skeleton = NodePath("../..")
 
 [node name="Dirt17" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1.1, 0, -3.90799e-15, 0, 1.251, 0, 3.90799e-15, 0, 1.1, -2, 0, 1.97272)
 material_override = SubResource("StandardMaterial3D_k3fwr")
-mesh = ExtResource("5_3sewg")
+mesh = ExtResource("5_a7l7t")
 skeleton = NodePath("../..")
 
 [node name="Dirt10" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1.1, 0, -3.90799e-15, 0, 1.251, 0, 3.90799e-15, 0, 1.1, 2, 0, -1)
 material_override = SubResource("StandardMaterial3D_k3fwr")
-mesh = ExtResource("5_3sewg")
+mesh = ExtResource("5_a7l7t")
 skeleton = NodePath("../..")
 
 [node name="Dirt11" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1.1, 0, 0, 0, 1.25, 0, 0, 0, 1, 2, 0, 0)
-mesh = ExtResource("5_3sewg")
+mesh = ExtResource("5_a7l7t")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_vnavr")
 
 [node name="Dirt12" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1.1, 0, -3.90799e-15, 0, 1.251, 0, 3.90799e-15, 0, 1.1, 2, 0, 1)
 material_override = SubResource("StandardMaterial3D_k3fwr")
-mesh = ExtResource("5_3sewg")
+mesh = ExtResource("5_a7l7t")
 skeleton = NodePath("../..")
 
 [node name="Dirt19" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1.1, 0, -3.90799e-15, 0, 1.251, 0, 3.90799e-15, 0, 1.1, 2, 0, 1.92188)
 material_override = SubResource("StandardMaterial3D_k3fwr")
-mesh = ExtResource("5_3sewg")
+mesh = ExtResource("5_a7l7t")
 skeleton = NodePath("../..")
 
 [node name="Dirt13" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1.1, 0, -3.90799e-15, 0, 1.251, 0, 3.90799e-15, 0, 1.1, -1, 0, 1)
 material_override = SubResource("StandardMaterial3D_k3fwr")
-mesh = ExtResource("5_3sewg")
+mesh = ExtResource("5_a7l7t")
 skeleton = NodePath("../..")
 
 [node name="Dirt15" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1.1, 0, -3.90799e-15, 0, 1.251, 0, 3.90799e-15, 0, 1.1, -1, 0, -1)
 material_override = SubResource("StandardMaterial3D_k3fwr")
-mesh = ExtResource("5_3sewg")
+mesh = ExtResource("5_a7l7t")
 skeleton = NodePath("../..")
 
 [node name="Dirt16" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1.1, 0, -3.90799e-15, 0, 1.251, 0, 3.90799e-15, 0, 1.1, 1, 0, -1)
 material_override = SubResource("StandardMaterial3D_k3fwr")
-mesh = ExtResource("5_3sewg")
+mesh = ExtResource("5_a7l7t")
 skeleton = NodePath("../..")
 
 [node name="Dirt14" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1.1, 0, -3.90799e-15, 0, 1.251, 0, 3.90799e-15, 0, 1.1, 1, 0, 1)
 visible = false
 material_override = SubResource("StandardMaterial3D_k3fwr")
-mesh = ExtResource("5_3sewg")
+mesh = ExtResource("5_a7l7t")
 skeleton = NodePath("../..")
 
-[node name="9lives" parent="." instance=ExtResource("7_a3x43")]
+[node name="9lives" parent="." instance=ExtResource("7_hh12p")]
 transform = Transform3D(-0.186145, 0, -0.166883, 0, 0.25, 0, 0.166883, 0, -0.186145, 0.467613, 0.212778, 0.566894)
 
-[node name="MovementArrow" parent="." instance=ExtResource("8_mi4c3")]
+[node name="MovementArrow" parent="." instance=ExtResource("8_fr6bh")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.00646776, 0.446673, -1.59726)
 
-[node name="MovementArrow2" parent="." instance=ExtResource("8_mi4c3")]
+[node name="MovementArrow2" parent="." instance=ExtResource("8_fr6bh")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.60909, 0.446673, 0.0219378)
 
-[node name="MovementArrow3" parent="." instance=ExtResource("8_mi4c3")]
+[node name="MovementArrow3" parent="." instance=ExtResource("8_fr6bh")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.54503, 0.446673, 0.0219378)
 
-[node name="MovementArrow4" parent="." instance=ExtResource("8_mi4c3")]
+[node name="MovementArrow4" parent="." instance=ExtResource("8_fr6bh")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.116642, 0.446673, 1.59508)
 
 [connection signal="mv_arrow_selected" from="MovementArrow" to="9lives" method="_on_movement_arrow_mv_arrow_selected"]

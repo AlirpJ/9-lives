@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cda47tip5sqy"]
+[gd_scene load_steps=17 format=3 uid="uid://c2p422gnfxfis"]
 
 [ext_resource type="ArrayMesh" uid="uid://cqa3u12xclmj" path="res://assets/floor.obj" id="1_abl2x"]
 [ext_resource type="ArrayMesh" uid="uid://dwj3bc8fbexob" path="res://assets/floor-detail.obj" id="2_oic4v"]
@@ -7,7 +7,9 @@
 [ext_resource type="ArrayMesh" uid="uid://bbmuiouqpb1ec" path="res://assets/wall-window-barred-medium.obj" id="4_csqpr"]
 [ext_resource type="Texture2D" uid="uid://8krd45dmhfqq" path="res://assets/colormap.png" id="4_jp68s"]
 [ext_resource type="ArrayMesh" uid="uid://cqiuxvs2ufjj" path="res://assets/dirt.obj" id="5_vr4b0"]
-[ext_resource type="Material" uid="uid://bc0wgw2pwvnut" path="res://assets/Textures/path_dark.tres" id="6_td164"]
+[ext_resource type="Material" path="res://assets/Textures/path_dark.tres" id="6_td164"]
+[ext_resource type="PackedScene" uid="uid://dpi3jkpcs5ipq" path="res://scenes/cat.tscn" id="9_225a7"]
+[ext_resource type="PackedScene" uid="uid://c63muarqptymh" path="res://scenes/movement_arrow.tscn" id="10_0wal5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_exl1l"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -202,3 +204,19 @@ visible = false
 material_override = SubResource("StandardMaterial3D_k3fwr")
 mesh = ExtResource("5_vr4b0")
 skeleton = NodePath("../..")
+
+[node name="9lives" parent="." instance=ExtResource("9_225a7")]
+transform = Transform3D(-0.173584, 0, -0.244681, 0, 0.3, 0, 0.244681, 0, -0.173584, 0.858746, 0.283164, 0.78111)
+
+[node name="MovementArrow" parent="." instance=ExtResource("10_0wal5")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.5588, 0.381034, 0)
+
+[node name="MovementArrow2" parent="." instance=ExtResource("10_0wal5")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.61494, 0.381034, 0)
+
+[node name="MovementArrow3" parent="." instance=ExtResource("10_0wal5")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0104262, 0.381034, 1.58325)
+
+[connection signal="mv_arrow_selected" from="MovementArrow" to="9lives" method="_on_movement_arrow_mv_arrow_selected"]
+[connection signal="mv_arrow_selected" from="MovementArrow2" to="9lives" method="_on_movement_arrow_2_mv_arrow_selected"]
+[connection signal="mv_arrow_selected" from="MovementArrow3" to="9lives" method="_on_movement_arrow_3_mv_arrow_selected"]

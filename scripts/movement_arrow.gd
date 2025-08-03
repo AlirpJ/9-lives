@@ -61,3 +61,7 @@ func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, 
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	# TODO: Transition to next area.
 	pass
+
+
+func _on_mv_arrow_selected() -> void:
+	pass # Replace with function body.

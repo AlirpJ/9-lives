@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c63muarqptymh"]
+[gd_scene load_steps=6 format=3 uid="uid://c63muarqptymh"]
 
 [ext_resource type="Script" path="res://scripts/movement_arrow.gd" id="1_12iww"]
 
@@ -7,6 +7,8 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_qx2fs"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_n0isv"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ht7aq"]
 
 [node name="MovementArrow" type="StaticBody3D"]
 script = ExtResource("1_12iww")
@@ -21,5 +23,10 @@ shape = SubResource("BoxShape3D_qx2fs")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_n0isv")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 1, 0.0745098, 1)
+energy = 0.5
+texture = SubResource("NoiseTexture2D_ht7aq")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

@@ -25,24 +25,25 @@ var persistentRooms = []
 var rooms = {
 # tileID 	: paths
 0			:	[1,2,3,4],
-1			:	[-1,-1],
+1			:	[-1,-1,-1,-1],
 2			:	[-1,-1,-1],
-3			:	[-1,-1],
+3			:	[-1,-1,-1,-1],
 4			:	[-1,-1,-1,-1],
 5			:	[-1,-1,-1,-1],
-6			:	[-1,-1,-1,-1],
+6			:	[-1,-1,-1],
 101			:	[-1,-1],
 102			:	[-1,-1,-1],
 103			:	[-1,-1],
 104			:	[-1,-1,-1,-1],
-201			:	[-1],
-202			:	[-1],
-203			:	[-1],
-204			:	[-1],
-301			:	[-1,-1],
-302			:	[-1,-1,-1],
-303			:	[-1,-1],
-304			:	[-1,-1,-1,-1],
+200			:	[-1,-1],
+202			:	[-1,-1],
+203			:	[-1,-1],
+204			:	[-1,-1],
+300			:	[-1],
+301			:	[-1],
+302			:	[-1],
+303			:	[-1],
+304			:	[-1],
 999			:	[-1]
 }
 
@@ -84,7 +85,7 @@ func roomGen(x,y): #roomGen(x,y) takes x: last room ID, and y: new room ID
 	
 	# Loop Logic
 	if getRoomType(y) == "loop":
-		lastProgress 
+		
 		var randomRoomChoice = (getRoom(y).pick_random())
 		var theIndex = getRoom(y).find(randomRoomChoice)
 		getRoom(y)[theIndex] = lastProgress
@@ -94,6 +95,7 @@ func roomGen(x,y): #roomGen(x,y) takes x: last room ID, and y: new room ID
 					tempVar = randomNonProgress(z)
 					getRoom(y)[a] = tempVar
 					popper(tempVar)
+		lastProgress = y
 				
 	# Dead End? Turn Back!
 	if getRoomType(y) == "deadEnd":
@@ -169,7 +171,7 @@ func getPathsFromId(y):
 
 func popper(removeMe):
 	availableRooms.erase(removeMe)
-	foundRooms[removeMe] = rooms[removeMe]
+	#foundRooms[removeMe] = rooms[removeMe]
 	return popped
 
 
