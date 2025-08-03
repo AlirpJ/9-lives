@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://birq3dd6mtiyl"]
+[gd_scene load_steps=22 format=3 uid="uid://birq3dd6mtiyl"]
 
 [ext_resource type="ArrayMesh" uid="uid://cqa3u12xclmj" path="res://assets/floor.obj" id="1_dfg3w"]
 [ext_resource type="ArrayMesh" uid="uid://dwj3bc8fbexob" path="res://assets/floor-detail.obj" id="2_p50fh"]
@@ -38,8 +38,6 @@ albedo_texture = ExtResource("8_ps4k1")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8b7sp"]
 albedo_texture = ExtResource("8_ps4k1")
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_pr27w"]
 
 [node name="StartRoom" type="Node3D"]
 
@@ -306,8 +304,6 @@ skeleton = NodePath("../..")
 script = ExtResource("12_hpolo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TheCat"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.436555, 0.311383)
-shape = SubResource("SphereShape3D_pr27w")
 
 [node name="9lives-cat" parent="TheCat" instance=ExtResource("11_ctgwr")]
 transform = Transform3D(-0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 0, 0.39027, 0.136424)
@@ -317,16 +313,4 @@ transform = Transform3D(-0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 
 [node name="MovementArrow" parent="." instance=ExtResource("15_3yksh")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.382139, -1.53656)
 
-[node name="MovementArrow2" parent="." instance=ExtResource("15_3yksh")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.63061, 0.382139, -0.0168692)
-
-[node name="MovementArrow3" parent="." instance=ExtResource("15_3yksh")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.56, 0.382139, -0.0168692)
-
-[node name="MovementArrow4" parent="." instance=ExtResource("15_3yksh")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0188191, 0.382139, 1.48129)
-
 [connection signal="mv_arrow_selected" from="MovementArrow" to="TheCat" method="_on_movement_arrow_mv_arrow_selected"]
-[connection signal="mv_arrow_selected" from="MovementArrow2" to="TheCat" method="_on_movement_arrow_mv_arrow_selected"]
-[connection signal="mv_arrow_selected" from="MovementArrow3" to="TheCat" method="_on_movement_arrow_mv_arrow_selected"]
-[connection signal="mv_arrow_selected" from="MovementArrow4" to="TheCat" method="_on_movement_arrow_mv_arrow_selected"]
