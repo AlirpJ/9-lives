@@ -34,9 +34,11 @@ func _physics_process(delta: float) -> void:
 
 	#move_and_slide()
 	
-	if Input.is_key_pressed(KEY_E):
+	if Input.is_action_just_pressed("lightCollect"):
+		print("light it up!")
 		light.modify_light_energy(.1)
-	if Input.is_key_pressed(KEY_Q):
+	if Input.is_action_just_pressed("lightCollect"):
+		print("light it up!")
 		light.modify_light_energy(-.1)
 	
 	if moving:
@@ -47,6 +49,7 @@ func _physics_process(delta: float) -> void:
 
 # INFO: Connects to movement_arrow signal.
 func _mv_arrow_selected(endpoint: Vector3) -> void:
+	print("Moving!")
 	moving = true
 	mv_endpoint = endpoint
 	

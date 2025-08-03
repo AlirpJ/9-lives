@@ -302,4 +302,4 @@ skeleton = NodePath("../..")
 transform = Transform3D(-0.445, 0, -6.71931e-08, 0, 0.445, 0, 6.71931e-08, 0, -0.445, 0.0135171, 0.363275, -0.0625534)
 
 [node name="MovementArrow" parent="." instance=ExtResource("12_v15wo")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.000745535, 0.296454, -1.67688)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.000745535, 0.296454, -1.49011)
