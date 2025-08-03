@@ -8,7 +8,5 @@ func _on_new_game_pressed():
 func _on_quit_pressed():
 	get_tree().quit()
 
-func _on_resume_pressed():
-	#var lastScene = "res://scenes/" + (str(Game.loadGame()['room'])) + ".tscn"
-	#SceneTransition.change_scene_to_file(lastScene)
-	pass
+func _on_credits_pressed() -> void:
+	SceneTransition.change_scene_to_file("res://scenes/credits_screen.tscn")
