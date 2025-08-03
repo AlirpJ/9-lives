@@ -1,13 +1,17 @@
 extends OmniLight3D
 
 @onready var ui_bar = $ProgressBar
+var lightEnergy
 
 func _ready() -> void:
-	ui_bar.value = light_energy * 100
+	ui_bar.value = Game.light * 100
+	#light_energy = Game.light
+	#print(light_energy)
 	
 func modify_light_energy(amount: float):
-	light_energy += amount
-	light_energy = clamp(light_energy, 0, 1)
-	ui_bar.value = light_energy * 100
+	Game.light += amount
+	Game.light = clamp(Game.light, 0, 1)
+	ui_bar.value = Game.light * 100
+	light_energy = Game.light
 
 # Add function to die if lightCollect is gone: 

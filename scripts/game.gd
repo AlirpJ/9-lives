@@ -9,11 +9,12 @@ var lastRoom = ""
 var state = 0
 var time = 120
 var lives = 9
-var resource = 100
+var light = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	loadGame()
+	#loadGame()
+	pass
 	
 # Called when the node enters the scene tree for the first time.
 func save():
@@ -24,7 +25,7 @@ func save():
 		"state"			: state,
 		"time"			: time,
 		"lives"			: lives,
-		"resource"		: resource
+		"light"		: light
 		#"positionX" : position.x,
 		#"positionY" : position.y,
 		#"positionZ" : position.z

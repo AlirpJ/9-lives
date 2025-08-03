@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://nv6x3ab2rsd1"]
+[gd_scene load_steps=14 format=3 uid="uid://nv6x3ab2rsd1"]
 
 [ext_resource type="ArrayMesh" uid="uid://cqa3u12xclmj" path="res://assets/floor.obj" id="1_hbfvh"]
 [ext_resource type="ArrayMesh" uid="uid://dwj3bc8fbexob" path="res://assets/floor-detail.obj" id="2_vhicj"]
 [ext_resource type="ArrayMesh" uid="uid://dbg1gdwefht6i" path="res://assets/wood-structure.obj" id="3_bs40h"]
 [ext_resource type="Texture2D" uid="uid://8krd45dmhfqq" path="res://assets/colormap.png" id="4_yijuu"]
 [ext_resource type="ArrayMesh" uid="uid://cqiuxvs2ufjj" path="res://assets/dirt.obj" id="5_3sewg"]
-[ext_resource type="Material" uid="uid://bc0wgw2pwvnut" path="res://assets/Textures/path_dark.tres" id="6_nvlju"]
+[ext_resource type="Material" path="res://assets/Textures/path_dark.tres" id="6_nvlju"]
+[ext_resource type="PackedScene" uid="uid://dpi3jkpcs5ipq" path="res://scenes/cat.tscn" id="7_a3x43"]
+[ext_resource type="PackedScene" uid="uid://c63muarqptymh" path="res://scenes/movement_arrow.tscn" id="8_mi4c3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_exl1l"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -205,3 +207,18 @@ visible = false
 material_override = SubResource("StandardMaterial3D_k3fwr")
 mesh = ExtResource("5_3sewg")
 skeleton = NodePath("../..")
+
+[node name="9lives" parent="." instance=ExtResource("7_a3x43")]
+transform = Transform3D(-0.25, 0, -3.7749e-08, 0, 0.25, 0, 3.7749e-08, 0, -0.25, 0.0199856, 0.212778, 0)
+
+[node name="MovementArrow" parent="." instance=ExtResource("8_mi4c3")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.00646776, 0.446673, -1.59726)
+
+[node name="MovementArrow2" parent="." instance=ExtResource("8_mi4c3")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.60909, 0.446673, 0.0219378)
+
+[node name="MovementArrow3" parent="." instance=ExtResource("8_mi4c3")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.54503, 0.446673, 0.0219378)
+
+[node name="MovementArrow4" parent="." instance=ExtResource("8_mi4c3")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.116642, 0.446673, 1.59508)

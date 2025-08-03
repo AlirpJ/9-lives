@@ -26,4 +26,3 @@ func _on_resume_pressed():
 
 func _on_credits_pressed() -> void:
 	SceneTransition.change_scene_to_file("res://scenes/credits_screen.tscn")
-

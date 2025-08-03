@@ -40,22 +40,22 @@ func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, 
 				choice = RoomGen.rooms[RoomGen.currentRoom][0]
 			"MovementArrow2":
 				if maxVal > 1:
-					choice = RoomGen.rooms.get([RoomGen.currentRoom])[1]
+					choice = RoomGen.rooms[RoomGen.currentRoom][1]
 				else:
 					choice = -1
 			"MovementArrow3":
 				if maxVal > 2:
-					choice = RoomGen.rooms.get([RoomGen.currentRoom])[2]
+					choice = RoomGen.rooms[RoomGen.currentRoom][2]
 				else:
 					choice = -1
 			"MovementArrow4":
 				if maxVal > 3:
-					choice = RoomGen.rooms.get([RoomGen.currentRoom])[3]
+					choice = RoomGen.rooms[RoomGen.currentRoom][3]
 				else:
 					choice = -1
 
 		if choice == -1:
-			choice = RoomGen.rooms.get([RoomGen.currentRoom])[0]
+			choice = RoomGen.rooms[RoomGen.currentRoom][0]
 		newRoom(choice)
 
 

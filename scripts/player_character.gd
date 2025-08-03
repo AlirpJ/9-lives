@@ -52,22 +52,28 @@ func _physics_process(delta: float) -> void:
 func mv_arrow_selected(endpoint: Vector3) -> void:
 	moving = true
 	mv_endpoint = endpoint
+	light.modify_light_energy(-.1)
 	
 # INFO: Connects to movement_arrow signal.
 func _on_movement_arrow_mv_arrow_selected(endpoint: Vector3) -> void:
 	moving = true
-	mv_endpoint = endpoint # Replace with function body.
+	mv_endpoint = endpoint
+	light.modify_light_energy(-.1)
 
 
 func _on_movement_arrow_2_mv_arrow_selected(endpoint: Vector3) -> void:
 	moving = true
-	mv_endpoint = endpoint # Replace with function body.
+	mv_endpoint = endpoint
+	light.modify_light_energy(-.1)
 
 
 func _on_movement_arrow_3_mv_arrow_selected(endpoint: Vector3) -> void:
 	moving = true
-	mv_endpoint = endpoint # Replace with function body.
+	mv_endpoint = endpoint
+	light.modify_light_energy(-.1)
 
 
-func _on_movement_arrow_4_mv_arrow_selected() -> void:
-	pass # Replace with function body.
+func _on_movement_arrow_4_mv_arrow_selected(endpoint: Vector3) -> void:
+	moving = true
+	mv_endpoint = endpoint
+	light.modify_light_energy(-.1)
