@@ -25,5 +25,6 @@ func _on_resume_pressed():
 	pass
 
 func _on_credits_pressed() -> void:
+	AudioManager.ui.play()
+	await AudioManager.ui.finished
 	SceneTransition.change_scene_to_file("res://scenes/credits_screen.tscn")
-

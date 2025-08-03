@@ -26,51 +26,40 @@ script = ExtResource("1_h301t")
 [node name="Falling" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_jt08q")
 volume_db = -10.0
-bus = &"sfx"
 
 [node name="Chirp" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_mnaqp")
-bus = &"sfx"
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_07040")
 volume_db = -15.0
-bus = &"music"
 
 [node name="BellJingle" type="AudioStreamPlayer" parent="."]
-bus = &"sfx"
 
 [node name="ClockTIcking" type="AudioStreamPlayer" parent="."]
-bus = &"sfx"
 
 [node name="Death" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_35ilq")
-bus = &"sfx"
 
 [node name="WaterDrip" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_q6j31")
 volume_db = -50.0
-bus = &"sfx"
 
 [node name="Whispers" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamPlaylist_jywtm")
 volume_db = -20.0
-bus = &"sfx"
 
 [node name="Echoes" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_q12v1")
 volume_db = -25.298
 pitch_scale = 0.96
-bus = &"sfx"
 
 [node name="Warning" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_jyeu7")
 volume_db = -10.0
-bus = &"sfx"
 
 [node name="LightAcquired" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_grupk")
-bus = &"sfx"
 
 [node name="Movement" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_16wej")
