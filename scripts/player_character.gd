@@ -37,10 +37,10 @@ func _physics_process(delta: float) -> void:
 
 	#move_and_slide()
 	
-	if Input.is_action_just_pressed("lightCollect"):
-		light.modify_light_energy(.1)
-	if Input.is_action_just_pressed("lightCollect2"):
-		light.modify_light_energy(-.1)
+	#if Input.is_action_just_pressed("lightCollect"):
+		#light.modify_light_energy(.1)
+	#if Input.is_action_just_pressed("lightCollect2"):
+		#light.modify_light_energy(-.1)
 	
 	if moving:
 		global_position = lerp(global_position, mv_endpoint, SPEED)
