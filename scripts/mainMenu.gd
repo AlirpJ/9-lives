@@ -7,11 +7,11 @@ func _on_new_game_pressed():
 	Game.lives = 9
 	AudioManager.ui.play()
 	await AudioManager.ui.finished
-	SceneTransition.change_scene_to_file("res://scenes/startRoom.tscn")
 	AudioManager.chirp.play()
 	AudioManager.falling.play()
 	await AudioManager.chirp.finished
 	await AudioManager.falling.finished
+	SceneTransition.change_scene_to_file("res://scenes/startRoom.tscn")
 	Game.new = true
 	
 	
@@ -31,4 +31,6 @@ func _on_resume_pressed():
 	pass
 
 func _on_credits_pressed() -> void:
+	AudioManager.ui.play()
+	await AudioManager.ui.finished
 	SceneTransition.change_scene_to_file("res://scenes/credits_screen.tscn")

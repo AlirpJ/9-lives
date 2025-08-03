@@ -37,6 +37,7 @@ func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, 
 		mv_arrow_selected.emit(self.global_position)
 		Game.light += 0.5
 		selfish.set_visible(false)
+		AudioManager.light_acquired.play()
 		
 		
 func _on_area_3d_area_entered(area: Area3D) -> void:

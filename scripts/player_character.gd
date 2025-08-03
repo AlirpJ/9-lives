@@ -57,6 +57,8 @@ func die():
 		Game.light == 1
 		RoomGen.currentRoom = 0
 		#SceneTransition.change_scene_to_file("res://scenes/LivesRemaining.tscn")
+		AudioManager.bell_jingle.play()
+		await AudioManager.bell_jingle.finished
 		SceneTransition.change_scene_to_file("res://scenes/startRoom.tscn")
 	else:
 		SceneTransition.change_scene_to_file("res://scenes/lose_screen.tscn")

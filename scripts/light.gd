@@ -16,3 +16,5 @@ func modify_light_energy(amount: float):
 	Game.light = clamp(Game.light, 0, 1)
 	ui_bar.value = Game.light * 100
 	light_energy = Game.light
+	if ui_bar.value < 30 and not AudioManager.warning.is_playing():
+		AudioManager.warning.play()
