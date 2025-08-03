@@ -258,4 +258,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.113464, 0.171082, -0.450012
 shape = SubResource("BoxShape3D_ihx8w")
 
 [node name="Light" parent="." instance=ExtResource("2_8ldbg")]
-script = null

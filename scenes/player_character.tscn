@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bua1t1qlhqo1b"]
 
 [ext_resource type="Script" path="res://scripts/player_character.gd" id="1_irlv1"]
-[ext_resource type="PackedScene" uid="uid://ips76ykc7s3a" path="res://scripts/light.tscn" id="2_lrayc"]
+[ext_resource type="PackedScene" uid="uid://ips76ykc7s3a" path="res://scenes/light.tscn" id="2_6ccjs"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v67e1"]
 
@@ -16,4 +16,4 @@ shape = SubResource("CapsuleShape3D_v67e1")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_pwq28")
 
-[node name="Light" parent="." instance=ExtResource("2_lrayc")]
+[node name="Light" parent="." instance=ExtResource("2_6ccjs")]
