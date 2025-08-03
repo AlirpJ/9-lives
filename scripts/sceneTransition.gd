@@ -27,10 +27,10 @@ func change_scene_to_file(target: String) -> void:
 	# Scene save logic
 	theScene = target.replace("res://scenes/","")
 	theScene = theScene.replace(".tscn","")
-	if theScene != "start_menu": # Don't save title screen
-		Game.lastRoom = Game.room
-		Game.room = theScene
-		Game.saveGame()
+	#if theScene != "start_menu": # Don't save title screen
+		#Game.lastRoom = Game.room
+		#Game.room = theScene
+		#Game.saveGame()
 	
 	# Play intro animation
 	animPlayer.play_backwards('dissolve')

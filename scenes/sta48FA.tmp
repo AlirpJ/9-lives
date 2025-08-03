@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://birq3dd6mtiyl"]
+[gd_scene load_steps=22 format=3 uid="uid://birq3dd6mtiyl"]
 
 [ext_resource type="ArrayMesh" uid="uid://cqa3u12xclmj" path="res://assets/floor.obj" id="1_dfg3w"]
 [ext_resource type="ArrayMesh" uid="uid://dwj3bc8fbexob" path="res://assets/floor-detail.obj" id="2_p50fh"]
@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://djt4lf45vxfay" path="res://assets/Textures/colormap_prototype.png" id="8_ps4k1"]
 [ext_resource type="ArrayMesh" uid="uid://bbmuiouqpb1ec" path="res://assets/wall-window-barred-medium.obj" id="9_j6o17"]
 [ext_resource type="ArrayMesh" uid="uid://ddplpd5ymf3cr" path="res://assets/wall-window-cutout-large.obj" id="10_2j5d5"]
-[ext_resource type="PackedScene" uid="uid://dpi3jkpcs5ipq" path="res://scenes/cat.tscn" id="11_jf6dw"]
+[ext_resource type="PackedScene" uid="uid://crqptpvmhx3rg" path="res://assets/9lives-cat.blend" id="11_ctgwr"]
+[ext_resource type="Script" path="res://scripts/player_character.gd" id="12_hpolo"]
+[ext_resource type="PackedScene" uid="uid://ips76ykc7s3a" path="res://scenes/light.tscn" id="14_x7qgk"]
 [ext_resource type="PackedScene" uid="uid://c63muarqptymh" path="res://scenes/movement_arrow.tscn" id="15_3yksh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_exl1l"]
@@ -298,22 +300,17 @@ material_override = SubResource("StandardMaterial3D_8b7sp")
 mesh = ExtResource("10_2j5d5")
 skeleton = NodePath("../..")
 
-[node name="9lives" parent="." instance=ExtResource("11_jf6dw")]
-transform = Transform3D(-0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 0, 0.45948, 0)
+[node name="TheCat" type="CharacterBody3D" parent="."]
+script = ExtResource("12_hpolo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TheCat"]
+
+[node name="9lives-cat" parent="TheCat" instance=ExtResource("11_ctgwr")]
+transform = Transform3D(-0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 0, 0.39027, 0.136424)
+
+[node name="Light" parent="TheCat" instance=ExtResource("14_x7qgk")]
 
 [node name="MovementArrow" parent="." instance=ExtResource("15_3yksh")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.382139, -1.53656)
 
-[node name="MovementArrow2" parent="." instance=ExtResource("15_3yksh")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.63061, 0.382139, -0.0168692)
-
-[node name="MovementArrow3" parent="." instance=ExtResource("15_3yksh")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.56, 0.382139, -0.0168692)
-
-[node name="MovementArrow4" parent="." instance=ExtResource("15_3yksh")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0188191, 0.382139, 1.48129)
-
-[connection signal="mv_arrow_selected" from="MovementArrow" to="9lives" method="_on_movement_arrow_mv_arrow_selected"]
-[connection signal="mv_arrow_selected" from="MovementArrow2" to="9lives" method="_on_movement_arrow_2_mv_arrow_selected"]
-[connection signal="mv_arrow_selected" from="MovementArrow3" to="9lives" method="_on_movement_arrow_3_mv_arrow_selected"]
-[connection signal="mv_arrow_selected" from="MovementArrow4" to="9lives" method="_on_movement_arrow_4_mv_arrow_selected"]
+[connection signal="mv_arrow_selected" from="MovementArrow" to="TheCat" method="_on_movement_arrow_mv_arrow_selected"]
