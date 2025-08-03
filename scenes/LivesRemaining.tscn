@@ -15,6 +15,7 @@ mouse_filter = 1
 script = ExtResource("1_m8s7k")
 
 [node name="lives" type="RichTextLabel" parent="."]
+visible = false
 z_index = -1
 layout_mode = 0
 offset_left = 138.0
