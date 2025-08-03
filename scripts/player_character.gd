@@ -5,6 +5,7 @@ const SPEED = 0.05
 
 var moving
 var mv_endpoint
+var removeLight = -0.2
 
 #const JUMP_VELOCITY = 4.5
 
@@ -38,9 +39,9 @@ func _physics_process(delta: float) -> void:
 	#move_and_slide()
 	
 	#if Input.is_action_just_pressed("lightCollect"):
-		#light.modify_light_energy(.1)
-	#if Input.is_action_just_pressed("lightCollect2"):
-		#light.modify_light_energy(-.1)
+		#light.modify_light_energy(removeLight * -1)
+	if Input.is_action_just_pressed("lightCollect2"):
+		light.modify_light_energy(removeLight)
 	
 	if moving:
 		global_position = lerp(global_position, mv_endpoint, SPEED)
@@ -51,36 +52,43 @@ func _physics_process(delta: float) -> void:
 			AudioManager.movement.stop()
 
 func die():
-	SceneTransition.change_scene_to_file("res://scenes/lose_screen.tscn")
-	Game.light = 1
+	if Game.lives > 1:
+		Game.lives -= 1
+		Game.light == 1
+		RoomGen.currentRoom = 0
+		#SceneTransition.change_scene_to_file("res://scenes/LivesRemaining.tscn")
+		SceneTransition.change_scene_to_file("res://scenes/startRoom.tscn")
+	else:
+		SceneTransition.change_scene_to_file("res://scenes/lose_screen.tscn")
+		RoomGen.resetRooms()
 
 # INFO: Connects to movement_arrow signal.
 # actually use the function(s) under this one lol
 func mv_arrow_selected(endpoint: Vector3) -> void:
 	moving = true
 	mv_endpoint = endpoint
-	light.modify_light_energy(-.1)
+	light.modify_light_energy(removeLight)
 	
 # INFO: Connects to movement_arrow signal.
 func _on_movement_arrow_mv_arrow_selected(endpoint: Vector3) -> void:
 	moving = true
 	mv_endpoint = endpoint
-	light.modify_light_energy(-.1)
+	light.modify_light_energy(removeLight)
 
 
 func _on_movement_arrow_2_mv_arrow_selected(endpoint: Vector3) -> void:
 	moving = true
 	mv_endpoint = endpoint
-	light.modify_light_energy(-.1)
+	light.modify_light_energy(removeLight)
 
 
 func _on_movement_arrow_3_mv_arrow_selected(endpoint: Vector3) -> void:
 	moving = true
 	mv_endpoint = endpoint
-	light.modify_light_energy(-.1)
+	light.modify_light_energy(removeLight)
 
 
 func _on_movement_arrow_4_mv_arrow_selected(endpoint: Vector3) -> void:
 	moving = true
 	mv_endpoint = endpoint
-	light.modify_light_energy(-.1)
+	light.modify_light_energy(removeLight)
