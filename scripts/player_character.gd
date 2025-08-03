@@ -35,10 +35,8 @@ func _physics_process(delta: float) -> void:
 	#move_and_slide()
 	
 	if Input.is_action_just_pressed("lightCollect"):
-		print("light it up!")
 		light.modify_light_energy(.1)
-	if Input.is_action_just_pressed("lightCollect"):
-		print("light it up!")
+	if Input.is_action_just_pressed("lightCollect2"):
 		light.modify_light_energy(-.1)
 	
 	if moving:
@@ -50,9 +48,26 @@ func _physics_process(delta: float) -> void:
 			AudioManager.movement.stop()
 
 # INFO: Connects to movement_arrow signal.
-func _mv_arrow_selected(endpoint: Vector3) -> void:
-	print("Moving!")
+# actually use the function(s) under this one lol
+func mv_arrow_selected(endpoint: Vector3) -> void:
 	moving = true
 	mv_endpoint = endpoint
 	
-	
+# INFO: Connects to movement_arrow signal.
+func _on_movement_arrow_mv_arrow_selected(endpoint: Vector3) -> void:
+	moving = true
+	mv_endpoint = endpoint # Replace with function body.
+
+
+func _on_movement_arrow_2_mv_arrow_selected(endpoint: Vector3) -> void:
+	moving = true
+	mv_endpoint = endpoint # Replace with function body.
+
+
+func _on_movement_arrow_3_mv_arrow_selected(endpoint: Vector3) -> void:
+	moving = true
+	mv_endpoint = endpoint # Replace with function body.
+
+
+func _on_movement_arrow_4_mv_arrow_selected() -> void:
+	pass # Replace with function body.

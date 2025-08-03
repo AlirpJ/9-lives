@@ -16,9 +16,14 @@ func _on_quit_pressed():
 	await AudioManager.ui.finished
 	get_tree().quit()
 
+
 func _on_resume_pressed():
 	AudioManager.ui.play()
 	await AudioManager.ui.finished
 	#var lastScene = "res://scenes/" + (str(Game.loadGame()['room'])) + ".tscn"
 	#SceneTransition.change_scene_to_file(lastScene)
 	pass
+
+func _on_credits_pressed() -> void:
+	SceneTransition.change_scene_to_file("res://scenes/credits_screen.tscn")
+

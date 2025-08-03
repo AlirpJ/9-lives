@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdra2ojqh8s7j"]
+
+[ext_resource type="Script" path="res://scripts/credits_screen.gd" id="1_b217o"]
+[ext_resource type="Texture2D" uid="uid://qwqpdd2inm6f" path="res://assets/art/credits NO buttons.png" id="2_lgxh2"]
+[ext_resource type="Texture2D" uid="uid://fmtyxxqcjmug" path="res://assets/art/menu button.png" id="3_s068q"]
+[ext_resource type="Texture2D" uid="uid://d0fi87yg7f2yo" path="res://assets/art/menu HOVER.png" id="4_k1oj2"]
+
+[node name="CreditsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b217o")
+
+[node name="CreditsScreen" type="Sprite2D" parent="."]
+process_mode = 4
+position = Vector2(480, 270)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_lgxh2")
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 60.0
+offset_right = 1295.0
+offset_bottom = 190.0
+scale = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Menu" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_s068q")
+texture_hover = ExtResource("4_k1oj2")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
