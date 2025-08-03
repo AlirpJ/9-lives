@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c21vfumnenpog"]
+[gd_scene load_steps=21 format=3 uid="uid://cclnnjbme0ny4"]
 
 [ext_resource type="ArrayMesh" uid="uid://cqa3u12xclmj" path="res://assets/floor.obj" id="1_fdwlo"]
 [ext_resource type="ArrayMesh" uid="uid://dwj3bc8fbexob" path="res://assets/floor-detail.obj" id="2_ypr67"]
@@ -317,13 +317,13 @@ mesh = ExtResource("10_gg7es")
 skeleton = NodePath("../..")
 
 [node name="9lives" parent="." instance=ExtResource("11_i3qpx")]
-transform = Transform3D(-0.350909, 0, -0.191998, 0, 0.4, 0, 0.191998, 0, -0.350909, 0.429943, 0.367408, 0.267121)
+transform = Transform3D(-0.350909, 0, -0.191998, 0, 0.4, 0, 0.191998, 0, -0.350909, 0.705824, 0.367408, 0.19038)
 
 [node name="MovementArrow" parent="." instance=ExtResource("12_yj8vp")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0137452, 0.363424, -1.6277)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0137452, 0.363424, -0.878551)
 
 [node name="MovementArrow2" parent="." instance=ExtResource("12_yj8vp")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0137452, 0.363424, 1.60917)
+transform = Transform3D(-0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, -0.0137452, 0.363424, 0.907234)
 
 [connection signal="mv_arrow_selected" from="MovementArrow" to="9lives" method="_on_movement_arrow_mv_arrow_selected"]
 [connection signal="mv_arrow_selected" from="MovementArrow2" to="9lives" method="_on_movement_arrow_2_mv_arrow_selected"]

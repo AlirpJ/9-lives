@@ -206,9 +206,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48571, 0, 1.82517)
 mesh = ExtResource("8_sh5ns")
 
 [node name="MovementArrow" parent="." instance=ExtResource("9_08ece")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.492, 0.282, 1.4)
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0.492, 0.282, 0.941017)
 
 [node name="9lives" parent="." instance=ExtResource("10_l4d7w")]
-transform = Transform3D(-0.332084, 0, -0.204499, 0, 0.39, 0, 0.204499, 0, -0.332084, 0.857092, 0.454563, 0.508798)
+transform = Transform3D(-0.0522205, 0, 0.325842, 0, 0.33, 0, -0.325842, 0, -0.0522205, 0.457917, 0.454563, 0.508798)
 
 [connection signal="mv_arrow_selected" from="MovementArrow" to="MovementArrow" method="_on_mv_arrow_selected"]

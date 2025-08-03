@@ -303,16 +303,16 @@ skeleton = NodePath("../..")
 transform = Transform3D(-0.25, 0, 3.7749e-08, 0, 0.25, 0, -3.7749e-08, 0, -0.25, 0, 0.202172, 0)
 
 [node name="MovementArrow" parent="." instance=ExtResource("15_3yksh")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.382139, -1.53656)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.382139, -0.671656)
 
 [node name="MovementArrow2" parent="." instance=ExtResource("15_3yksh")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.63061, 0.382139, -0.0168692)
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -0.867032, 0.382139, -0.0168692)
 
 [node name="MovementArrow3" parent="." instance=ExtResource("15_3yksh")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.56, 0.382139, -0.0168692)
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0.693039, 0.382139, -0.0168692)
 
 [node name="MovementArrow4" parent="." instance=ExtResource("15_3yksh")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0188191, 0.382139, 1.48129)
+transform = Transform3D(-0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, -0.0188191, 0.382139, 0.661118)
 
 [node name="lightCollect" parent="." instance=ExtResource("13_cystl")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.37633, 1.03958, -1.43891)

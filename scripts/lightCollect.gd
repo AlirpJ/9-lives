@@ -2,6 +2,7 @@ extends Node
 
 signal mv_arrow_selected
 
+@onready var fade = $OmniLight3D
 @export var direction: String
 @onready var selfish = $"."
 @onready var movement_arrow: StaticBody3D = $"."
@@ -36,8 +37,11 @@ func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, 
 	if event is InputEventMouseButton and Input.is_action_just_pressed("MouseSelect"):
 		mv_arrow_selected.emit(self.global_position)
 		Game.light += 0.5
-		selfish.set_visible(false)
 		AudioManager.light_acquired.play()
+		#lerp(global_position, mv_endpoint, SPEED)
+		fade.light_energy = 0.1
+		#selfish.set_visible(false)
+
 		
 		
 func _on_area_3d_area_entered(area: Area3D) -> void:

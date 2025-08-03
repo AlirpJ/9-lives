@@ -62,7 +62,7 @@ var foundRooms = {}
 func _process(delta):
 	if steps == 9999 and getRoomType(currentRoom) != "deadEnd":
 		resetRooms()
-		SceneTransition.change_scene_to_file("res://scenes/victory_screen.tscn")
+		SceneTransition.change_scene_to_file("res://scenes/exitRoom.tscn")
 	if Input.is_action_just_pressed("jump"):
 		print("Current Room: ",currentRoom)
 		print("Options: ",rooms[currentRoom])
@@ -237,7 +237,7 @@ func randomProgress():
 
 func randomStepGoal():
 	randomize()
-	goal = rng.randi_range(2,11)
+	goal = rng.randi_range(6,13)
 	return goal
 
 func pickRandomPath(max):

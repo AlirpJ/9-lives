@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c54r4xjkbdjxv"]
+[gd_scene load_steps=20 format=3 uid="uid://c54r4xjkbdjxv"]
 
 [ext_resource type="ArrayMesh" uid="uid://cqa3u12xclmj" path="res://assets/floor.obj" id="1_d28b4"]
 [ext_resource type="ArrayMesh" uid="uid://dbg1gdwefht6i" path="res://assets/wood-structure.obj" id="3_djqgt"]
@@ -8,7 +8,9 @@
 [ext_resource type="ArrayMesh" uid="uid://buxn5eygh3ks2" path="res://assets/water.obj" id="7_ngga3"]
 [ext_resource type="Texture2D" uid="uid://djt4lf45vxfay" path="res://assets/Textures/colormap_prototype.png" id="8_w8lm0"]
 [ext_resource type="ArrayMesh" uid="uid://bbmuiouqpb1ec" path="res://assets/wall-window-barred-medium.obj" id="9_pi3fe"]
+[ext_resource type="PackedScene" uid="uid://dpi3jkpcs5ipq" path="res://scenes/cat.tscn" id="10_btsxo"]
 [ext_resource type="ArrayMesh" uid="uid://ddplpd5ymf3cr" path="res://assets/wall-window-cutout-large.obj" id="10_jgsku"]
+[ext_resource type="PackedScene" uid="uid://hcjhejouco77" path="res://scenes/movement_arrow.tscn" id="11_5j4an"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_exl1l"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -261,3 +263,9 @@ transform = Transform3D(-0.3, 0, 2.59464e-07, 0, 0.4, 0, -2.62268e-08, 0, -2.967
 material_override = SubResource("StandardMaterial3D_8b7sp")
 mesh = ExtResource("10_jgsku")
 skeleton = NodePath("../..")
+
+[node name="9lives" parent="." instance=ExtResource("10_btsxo")]
+transform = Transform3D(-0.28, 0, -4.22788e-08, 0, 0.28, 0, 4.22788e-08, 0, -0.28, 0, 0.216099, 0.373921)
+
+[node name="finaleArrow" parent="." instance=ExtResource("11_5j4an")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.347163, -0.689336)

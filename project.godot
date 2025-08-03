@@ -25,6 +25,7 @@ Game="*res://scripts/game.gd"
 SceneTransition="*res://scenes/scene_transition.tscn"
 RoomGen="*res://scripts/roomGen.gd"
 AudioManager="*res://scenes/audio_manager.tscn"
+LivesRemaining="*res://scenes/LivesRemaining.tscn"
 
 [display]
 

@@ -209,13 +209,13 @@ skeleton = NodePath("../..")
 transform = Transform3D(-0.173584, 0, -0.244681, 0, 0.3, 0, 0.244681, 0, -0.173584, 0.858746, 0.283164, 0.78111)
 
 [node name="MovementArrow" parent="." instance=ExtResource("10_0wal5")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.5588, 0.381034, 0)
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0.763624, 0.884324, 0)
 
 [node name="MovementArrow2" parent="." instance=ExtResource("10_0wal5")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.61494, 0.381034, 0)
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -0.941832, 0.791976, 0)
 
 [node name="MovementArrow3" parent="." instance=ExtResource("10_0wal5")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0104262, 0.381034, 1.58325)
+transform = Transform3D(-0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 0.0104262, 1.0434, 0.85588)
 
 [connection signal="mv_arrow_selected" from="MovementArrow" to="9lives" method="_on_movement_arrow_mv_arrow_selected"]
 [connection signal="mv_arrow_selected" from="MovementArrow2" to="9lives" method="_on_movement_arrow_2_mv_arrow_selected"]

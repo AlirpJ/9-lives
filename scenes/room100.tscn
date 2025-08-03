@@ -1,16 +1,16 @@
-[gd_scene load_steps=19 format=3 uid="uid://djhge7feaao13"]
+[gd_scene load_steps=19 format=3 uid="uid://7jlm1mr8h2oc"]
 
 [ext_resource type="ArrayMesh" uid="uid://cqa3u12xclmj" path="res://assets/floor.obj" id="1_crhsq"]
 [ext_resource type="ArrayMesh" uid="uid://dbg1gdwefht6i" path="res://assets/wood-structure.obj" id="3_q4ens"]
 [ext_resource type="Texture2D" uid="uid://8krd45dmhfqq" path="res://assets/colormap.png" id="4_7fyvy"]
 [ext_resource type="ArrayMesh" uid="uid://cqiuxvs2ufjj" path="res://assets/dirt.obj" id="5_l7euk"]
-[ext_resource type="Material" uid="uid://bc0wgw2pwvnut" path="res://assets/Textures/path_dark.tres" id="6_yme4e"]
+[ext_resource type="Material" path="res://assets/Textures/path_dark.tres" id="6_yme4e"]
 [ext_resource type="ArrayMesh" uid="uid://buxn5eygh3ks2" path="res://assets/water.obj" id="7_wyoxy"]
 [ext_resource type="Texture2D" uid="uid://djt4lf45vxfay" path="res://assets/Textures/colormap_prototype.png" id="8_ln0yi"]
 [ext_resource type="ArrayMesh" uid="uid://bbmuiouqpb1ec" path="res://assets/wall-window-barred-medium.obj" id="9_a60hv"]
 [ext_resource type="ArrayMesh" uid="uid://ddplpd5ymf3cr" path="res://assets/wall-window-cutout-large.obj" id="10_jnqyq"]
 [ext_resource type="PackedScene" uid="uid://dpi3jkpcs5ipq" path="res://scenes/cat.tscn" id="11_j3i3q"]
-[ext_resource type="PackedScene" uid="uid://c63muarqptymh" path="res://scenes/movement_arrow.tscn" id="12_lepyv"]
+[ext_resource type="PackedScene" uid="uid://hcjhejouco77" path="res://scenes/movement_arrow.tscn" id="12_lepyv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_exl1l"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -332,19 +332,19 @@ mesh = ExtResource("10_jnqyq")
 skeleton = NodePath("../..")
 
 [node name="9lives" parent="." instance=ExtResource("11_j3i3q")]
-transform = Transform3D(-0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 0, 0.45948, 0)
+transform = Transform3D(-0.37, 0, 5.58684e-08, 0, 0.37, 0, -5.58684e-08, 0, -0.37, 0, 0.278475, -0.218756)
 
 [node name="MovementArrow" parent="." instance=ExtResource("12_lepyv")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.382139, -1.53656)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.382139, -0.861196)
 
 [node name="MovementArrow2" parent="." instance=ExtResource("12_lepyv")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.63061, 0.382139, -0.0168692)
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -0.887309, 0.382139, -0.0168692)
 
 [node name="MovementArrow3" parent="." instance=ExtResource("12_lepyv")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.56, 0.382139, -0.0168692)
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0.751465, 0.382139, -0.0168692)
 
 [node name="MovementArrow4" parent="." instance=ExtResource("12_lepyv")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0188191, 0.382139, 1.48129)
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -0.0188191, 0.382139, 0.893216)
 
 [connection signal="mv_arrow_selected" from="MovementArrow" to="9lives" method="_on_movement_arrow_mv_arrow_selected"]
 [connection signal="mv_arrow_selected" from="MovementArrow2" to="9lives" method="_on_movement_arrow_2_mv_arrow_selected"]
