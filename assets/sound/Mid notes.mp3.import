@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3hd8nfsno15r"
+path="res://.godot/imported/Mid notes.mp3-74f68ddc5c328f8e2a993d5d75a9efaa.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/Mid notes.mp3"
+dest_files=["res://.godot/imported/Mid notes.mp3-74f68ddc5c328f8e2a993d5d75a9efaa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
