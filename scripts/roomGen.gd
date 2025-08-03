@@ -12,6 +12,7 @@ var z = 0
 
 var newGame = true
 var currentRoom = 0
+var lastProgress = 0
 
 var path0
 var path1 = -1
@@ -34,16 +35,18 @@ var rooms = {
 102			:	[-1,-1,-1],
 103			:	[-1,-1],
 104			:	[-1,-1,-1,-1],
-201			:	[-1,-1],
-202			:	[-1,-1,-1],
-203			:	[-1,-1],
-204			:	[-1,-1,-1,-1],
+201			:	[-1],
+202			:	[-1],
+203			:	[-1],
+204			:	[-1],
 301			:	[-1,-1],
 302			:	[-1,-1,-1],
 303			:	[-1,-1],
 304			:	[-1,-1,-1,-1],
 999			:	[-1]
 }
+
+var foundRooms = {}
 	
 # Rooms:
 # 0 = Start Room
@@ -56,36 +59,36 @@ var rooms = {
 # roomGen is called when you click to enter a new room
 func _process(delta):
 	if Input.is_action_just_pressed("jump"):
-		
 		if newGame:
-			#print(currentRoom)
 			roomGen(-1,currentRoom)
-			#print(currentRoom,", ",getRoom(currentRoom)[0])
-			#currentRoom = rooms[currentRoom][0] #take the first path out of start
+			print("Current Room: ",currentRoom)
+			print("Options: ",rooms[currentRoom])
+			print("---")
 			newGame = false
 		else:
-			#print("---")
-			#print(currentRoom,", ",getRoom(currentRoom)[0])
-			#print("ROOM GENERATION")
 			roomGen(currentRoom,getRoom(currentRoom)[0]) #take the first path out of your room
-			#print(getRoom(currentRoom)[0])
 			currentRoom = getRoom(currentRoom)[0] 
-			print(currentRoom,", ",getRoom(currentRoom)[0])
-			print(rooms.get(getRoom(currentRoom)[0]))
+			print("Current Room: ",currentRoom)
+			print("New Options: ",rooms[currentRoom])
+			print("---")
+
 func roomGen(x,y): #roomGen(x,y) takes x: last room ID, and y: new room ID
-	print("Left room ",x,"! Now in room ",y,".")
+	if !(rooms[y].has(-1)):
+		"been here!"
+		currentRoom = y
+		return
 	
 	z = rooms.get(y).size() # Get the number of exits to a room given its ID
 	path0 = x # path0 will ALWAYS take you back where you came
-	print("z = ",z)
+	
 	# Check for resource
 	if Game.resource < 1:
 		pass
 		# Lose 1 life
 	
-	if y == 0:
+	# Start room
+	if y <= 0:
 		rooms[0] = [1,2,3,4]
-		
 	
 	# Check for victory
 	if getRoomType(y) == "victory":
@@ -94,21 +97,26 @@ func roomGen(x,y): #roomGen(x,y) takes x: last room ID, and y: new room ID
 	
 	# Loop Logic
 	if getRoomType(y) == "loop":
-		for a in getRoom(y):
-			a=-1
-		getRoom(y).set(z,0)
-		# randomly assign non-progress rooms
-		for a in getRoom(y):
-			if a != 0:
-				a = randomNonProgress(z)
-				popper(a)
+		lastProgress 
+		var randomRoomChoice = (getRoom(y).pick_random())
+		var theIndex = getRoom(y).find(randomRoomChoice)
+		getRoom(y)[theIndex] = lastProgress
+		for a in range(len(getRoom(y))):
+				var tempVar = -1
+				if getRoom(y)[a] != 0:
+					tempVar = randomNonProgress(z)
+					getRoom(y)[a] = tempVar
+					popper(tempVar)
 				
 	# Dead End? Turn Back!
 	if getRoomType(y) == "deadEnd":
-		path0 = x
+		for a in range(len(getRoom(y))):
+				getRoom(y)[a] = x
+
 	
 	# Progress Logic
 	if getRoomType(y) == "progress":
+		lastProgress = y
 		# randomly assign non-progress rooms
 		for a in getRoom(y):
 			if a != 0:
@@ -126,20 +134,17 @@ func roomGen(x,y): #roomGen(x,y) takes x: last room ID, and y: new room ID
 			getRoom(y).set(assignMe,randRoom)
 			popper(randRoom)
 		else:
-			print(getRoom(y))
 			# randomly assign non-progress rooms
 			for a in range(len(getRoom(y))):
-				
+				var tempVar = -1
 				if getRoom(y)[a] != 0:
-					
-					getRoom(y)[a] = randomNonProgress(z)
-					#print("lol ",a)
-					
-					popper(a)
+					tempVar = randomNonProgress(z)
+					getRoom(y)[a] = tempVar
+					popper(tempVar)
 					
 					
-		print(getRoom(y))
-	print("Left room ",x,"! Now in room ",y,".")
+
+
 
 
 
@@ -165,7 +170,7 @@ func getRoomType(roomId):
 		return "progress"
 	if roomId >= 200 and roomId <= 299:
 		return "loop"
-	if roomId >= 200 and roomId <= 299:
+	if roomId >= 300 and roomId <= 399:
 		return "deadEnd"
 	if roomId == 999:
 		return "victory"
@@ -176,9 +181,8 @@ func getPathsFromId(y):
 	return (rooms.get(y))
 
 func popper(removeMe):
-	popped = removeMe
-	if availableRooms.has(removeMe):
-		availableRooms.erase(removeMe)
+	availableRooms.erase(removeMe)
+	foundRooms[removeMe] = rooms[removeMe]
 	return popped
 
 
@@ -211,16 +215,19 @@ func pickRandomPath(max):
 	
 func randomNonProgress(max):
 	var path = max
-	# If room is not available and progress, pick a new random
-	while !availableRooms.has(path) and getRoomType(path) != "progress":
-		path = rng.randi_range(0,500)
-		print("path: ",path)
+	var tempArray = []
+	for tempPath in availableRooms:
+		if getRoomType(tempPath) != "progress" and tempPath != 999:
+			tempArray.append(tempPath)
+	path = tempArray.pick_random()
+
 	return path
 
-func randomProgressRoom(max):
-	var path = -1
-	# If room is not available and not progress, pick a new random
-	while !availableRooms.has(path) and getRoomType(path) != "progress":
-		path = pickRandomPath(max)
-		print("path: ",path)
+func randomProgressRoom(max): # return once path is in available rooms and path is a progress
+	var path = max
+	var tempArray = []
+	for tempPath in availableRooms:
+		if getRoomType(tempPath) == "progress" or tempPath==999:
+			tempArray.append(tempPath)
+	path = tempArray.pick_random()
 	return path
