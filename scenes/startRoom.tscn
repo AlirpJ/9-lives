@@ -299,7 +299,7 @@ mesh = ExtResource("10_2j5d5")
 skeleton = NodePath("../..")
 
 [node name="9lives" parent="." instance=ExtResource("11_jf6dw")]
-transform = Transform3D(-0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 0, 0.45948, 0)
+transform = Transform3D(-0.25, 0, 3.7749e-08, 0, 0.25, 0, -3.7749e-08, 0, -0.25, 0, 0.202172, 0)
 
 [node name="MovementArrow" parent="." instance=ExtResource("15_3yksh")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.382139, -1.53656)

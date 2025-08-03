@@ -60,7 +60,7 @@ var foundRooms = {}
 
 # roomGen is called when you click to enter a new room
 func _process(delta):
-	if steps == 9999:
+	if steps == 9999 and getRoomType(currentRoom) != "deadEnd":
 		resetRooms()
 		SceneTransition.change_scene_to_file("res://scenes/victory_screen.tscn")
 	if Input.is_action_just_pressed("jump"):

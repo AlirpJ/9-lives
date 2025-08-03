@@ -5,6 +5,7 @@ var lightEnergy
 
 func _ready() -> void:
 	ui_bar.value = Game.light * 100
+	#ui_bar.font_outline_color = Color.hex(0xe6db9e)
 	#light_energy = Game.light
 	
 func modify_light_energy(amount: float):
