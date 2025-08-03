@@ -4,6 +4,7 @@ var goalie
 
 func _on_new_game_pressed():
 	goalie = RoomGen.randomStepGoal()
+	Game.lives = 9
 	AudioManager.ui.play()
 	await AudioManager.ui.finished
 	SceneTransition.change_scene_to_file("res://scenes/startRoom.tscn")
