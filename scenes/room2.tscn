@@ -7,7 +7,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dbg1gdwefht6i" path="res://assets/wood-structure.obj" id="5_38ie6"]
 [ext_resource type="Texture2D" uid="uid://8krd45dmhfqq" path="res://assets/colormap.png" id="6_cl8tf"]
 [ext_resource type="ArrayMesh" uid="uid://cqiuxvs2ufjj" path="res://assets/dirt.obj" id="7_baknj"]
-[ext_resource type="Material" path="res://assets/Textures/path_dark.tres" id="8_bv5pq"]
+[ext_resource type="Material" uid="uid://bc0wgw2pwvnut" path="res://assets/Textures/path_dark.tres" id="8_bv5pq"]
 [ext_resource type="PackedScene" uid="uid://dpi3jkpcs5ipq" path="res://scenes/cat.tscn" id="9_1mqmg"]
 [ext_resource type="PackedScene" uid="uid://c63muarqptymh" path="res://scenes/movement_arrow.tscn" id="10_pkuee"]
 
@@ -55,7 +55,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 mesh = ExtResource("1_pe62o")
 
 [node name="floor3" type="MeshInstance3D" parent="floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+transform = Transform3D(-0.296225, 0, 0.955118, 0, 1, 0, -0.955118, 0, -0.296225, 0.173537, 0, -0.556978)
+mesh = ExtResource("2_wv8kw")
+
+[node name="floor4" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(-0.33328, 0, -0.942828, 0, 1, 0, 0.942828, 0, -0.33328, 0.702777, 0, -1.55249)
 mesh = ExtResource("2_wv8kw")
 
 [node name="floor5" type="MeshInstance3D" parent="floor"]
@@ -70,15 +74,15 @@ mesh = ExtResource("1_pe62o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 mesh = ExtResource("1_pe62o")
 
-[node name="Wall-window-barred-medium2" type="MeshInstance3D" parent="floor/floor8"]
-transform = Transform3D(-1.07284e-07, 0, 0.75, 0, 0.5, 0, -1, 0, -8.04633e-08, -1, -0.101, -1.5)
-material_override = SubResource("StandardMaterial3D_3kqnj")
-mesh = ExtResource("4_mnrre")
-skeleton = NodePath("../..")
-
 [node name="floor9" type="MeshInstance3D" parent="floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
 mesh = ExtResource("1_pe62o")
+
+[node name="Wall-window-barred-medium2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -1.13247e-07, 0, 0.5, 0, 1.50995e-07, 0, -0.75, -0.5, -0.101, 0.925)
+material_override = SubResource("StandardMaterial3D_3kqnj")
+mesh = ExtResource("4_mnrre")
+skeleton = NodePath("../floor")
 
 [node name="Wood-structure" type="MeshInstance3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 1.124, 0, 0, 0, 1, 0, 0, 0)
