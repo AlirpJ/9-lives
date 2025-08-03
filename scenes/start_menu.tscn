@@ -27,7 +27,7 @@ text = "New Game"
 
 [node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Resume Game"
+text = "Credits"
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
