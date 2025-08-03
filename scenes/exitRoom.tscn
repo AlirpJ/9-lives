@@ -1,0 +1,263 @@
+[gd_scene load_steps=18 format=3 uid="uid://ciap8r1vkxbh8"]
+
+[ext_resource type="ArrayMesh" uid="uid://cqa3u12xclmj" path="res://assets/floor.obj" id="1_d28b4"]
+[ext_resource type="ArrayMesh" uid="uid://dbg1gdwefht6i" path="res://assets/wood-structure.obj" id="3_djqgt"]
+[ext_resource type="Texture2D" uid="uid://8krd45dmhfqq" path="res://assets/colormap.png" id="4_3ym6s"]
+[ext_resource type="ArrayMesh" uid="uid://cqiuxvs2ufjj" path="res://assets/dirt.obj" id="5_buvep"]
+[ext_resource type="Material" uid="uid://bc0wgw2pwvnut" path="res://assets/Textures/path_dark.tres" id="6_o2ss5"]
+[ext_resource type="ArrayMesh" uid="uid://buxn5eygh3ks2" path="res://assets/water.obj" id="7_ngga3"]
+[ext_resource type="Texture2D" uid="uid://djt4lf45vxfay" path="res://assets/Textures/colormap_prototype.png" id="8_w8lm0"]
+[ext_resource type="ArrayMesh" uid="uid://bbmuiouqpb1ec" path="res://assets/wall-window-barred-medium.obj" id="9_pi3fe"]
+[ext_resource type="ArrayMesh" uid="uid://ddplpd5ymf3cr" path="res://assets/wall-window-cutout-large.obj" id="10_jgsku"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_exl1l"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_muupa"]
+sky_material = SubResource("ProceduralSkyMaterial_exl1l")
+
+[sub_resource type="Environment" id="Environment_orukt"]
+background_mode = 1
+sky = SubResource("Sky_muupa")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0urtb"]
+albedo_texture = ExtResource("4_3ym6s")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4us88"]
+transparency = 1
+shading_mode = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nagm8"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifhhy"]
+albedo_texture = ExtResource("8_w8lm0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8b7sp"]
+albedo_texture = ExtResource("8_w8lm0")
+
+[node name="ExitRoom" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_orukt")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.00523376, 2.02025, 7.82013e-05)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, -2)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 1.5, 2.5, 1.5)
+fov = 89.5867
+
+[node name="CameraSpotlight" type="SpotLight3D" parent="Camera3D"]
+
+[node name="floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = ExtResource("1_d28b4")
+
+[node name="floor2" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+mesh = ExtResource("1_d28b4")
+
+[node name="floor3" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+mesh = ExtResource("1_d28b4")
+
+[node name="floor4" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+mesh = ExtResource("1_d28b4")
+
+[node name="floor5" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = ExtResource("1_d28b4")
+
+[node name="floor6" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+mesh = ExtResource("1_d28b4")
+
+[node name="floor8" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+mesh = ExtResource("1_d28b4")
+
+[node name="floor9" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
+mesh = ExtResource("1_d28b4")
+
+[node name="floor10" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2)
+mesh = ExtResource("1_d28b4")
+
+[node name="Wood-structure3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1.124, 0, 1, 0, -4.37114e-08, 8.08661e-08, 0, -1.85)
+mesh = ExtResource("3_djqgt")
+
+[node name="Wood-structure4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1.124, 0, 1, 0, -4.37114e-08, -8.08661e-08, 0, 1.85)
+mesh = ExtResource("3_djqgt")
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="Dirt" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.1, 0, 0, 0, 1.251, 0, 0, 0, 1.1, -1, 0, 2)
+material_override = SubResource("StandardMaterial3D_0urtb")
+mesh = ExtResource("5_buvep")
+skeleton = NodePath("")
+
+[node name="Dirt2" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1.25, 0, 0, 0, 1.1, 0, 0, 2)
+mesh = ExtResource("5_buvep")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("6_o2ss5")
+
+[node name="Dirt3" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.1, 0, 0, 0, 1.251, 0, 0, 0, 1.1, 1, 0, 2)
+material_override = SubResource("StandardMaterial3D_0urtb")
+mesh = ExtResource("5_buvep")
+skeleton = NodePath("")
+
+[node name="Dirt7" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.1, 0, 0, 0, 1.251, 0, 0, 0, 1.1, -1, 0, -2)
+material_override = SubResource("StandardMaterial3D_0urtb")
+mesh = ExtResource("5_buvep")
+skeleton = NodePath("")
+
+[node name="Dirt14" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.1, 0, 0, 0, 1.251, 0, 0, 0, 1.1, -1.96806, 0, -2)
+material_override = SubResource("StandardMaterial3D_0urtb")
+mesh = ExtResource("5_buvep")
+skeleton = NodePath("")
+
+[node name="Dirt8" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1.25, 0, 0, 0, 1.1, 0, 0, -2)
+mesh = ExtResource("5_buvep")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_4us88")
+
+[node name="Dirt9" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.1, 0, 0, 0, 1.251, 0, 0, 0, 1.1, 1, 0, -2)
+material_override = SubResource("StandardMaterial3D_0urtb")
+mesh = ExtResource("5_buvep")
+skeleton = NodePath("")
+
+[node name="Dirt15" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.1, 0, 0, 0, 1.251, 0, 0, 0, 1.1, 2.08289, 0, -2)
+material_override = SubResource("StandardMaterial3D_0urtb")
+mesh = ExtResource("5_buvep")
+skeleton = NodePath("")
+
+[node name="Dirt4" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.1, 0, -1.29421e-14, 0, 1.251, 0, 3.90799e-15, 0, 3.64287, -2, 0, -1)
+material_override = SubResource("StandardMaterial3D_0urtb")
+mesh = ExtResource("5_buvep")
+skeleton = NodePath("")
+
+[node name="Dirt5" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.1, 0, 0, 0, 1.25, 0, 0, 0, 1, -2, 0, 0)
+visible = false
+mesh = ExtResource("5_buvep")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_nagm8")
+
+[node name="Dirt6" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.1, 0, -3.90799e-15, 0, 1.251, 0, 3.90799e-15, 0, 1.1, -2, 0, 1)
+material_override = SubResource("StandardMaterial3D_0urtb")
+mesh = ExtResource("5_buvep")
+skeleton = NodePath("")
+
+[node name="Dirt13" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.1, 0, -3.90799e-15, 0, 1.251, 0, 3.90799e-15, 0, 1.1, -2, 0, 2.03307)
+material_override = SubResource("StandardMaterial3D_0urtb")
+mesh = ExtResource("5_buvep")
+skeleton = NodePath("")
+
+[node name="Dirt10" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.1, 0, -1.44016e-14, 0, 1.251, 0, 3.90799e-15, 0, 4.05368, 2, 0, -1)
+material_override = SubResource("StandardMaterial3D_0urtb")
+mesh = ExtResource("5_buvep")
+skeleton = NodePath("")
+
+[node name="Dirt11" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.1, 0, 0, 0, 1.25, 0, 0, 0, 1, 2, 0, 0)
+visible = false
+mesh = ExtResource("5_buvep")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_nagm8")
+
+[node name="Dirt12" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.1, 0, -3.90799e-15, 0, 1.251, 0, 3.90799e-15, 0, 1.1, 2, 0, 1)
+material_override = SubResource("StandardMaterial3D_0urtb")
+mesh = ExtResource("5_buvep")
+skeleton = NodePath("")
+
+[node name="Dirt16" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.1, 0, -3.90799e-15, 0, 1.251, 0, 3.90799e-15, 0, 1.1, 2, 0, 1.99028)
+material_override = SubResource("StandardMaterial3D_0urtb")
+mesh = ExtResource("5_buvep")
+skeleton = NodePath("")
+
+[node name="SewerStream" type="Node3D" parent="."]
+
+[node name="Water2" type="MeshInstance3D" parent="SewerStream"]
+transform = Transform3D(-4.39108e-08, 0, -0.1, 0, 0.125, 0, 1.00456, 0, -4.37114e-09, -1.15, -0.0198586, -1.558)
+mesh = ExtResource("7_ngga3")
+skeleton = NodePath("../..")
+
+[node name="Wall-window-barred-medium2" type="MeshInstance3D" parent="SewerStream"]
+transform = Transform3D(-1.07284e-07, 0, 0.75, 0, 0.5, 0, -1, 0, -8.04633e-08, -1, -0.101, -1.5)
+material_override = SubResource("StandardMaterial3D_ifhhy")
+mesh = ExtResource("9_pi3fe")
+skeleton = NodePath("../..")
+
+[node name="Wall-window-barred-medium3" type="MeshInstance3D" parent="SewerStream"]
+transform = Transform3D(2.50343e-07, 0, -0.75, 0, 0.5, 0, 1, 0, 1.87758e-07, -1, -0.101, 1.5)
+material_override = SubResource("StandardMaterial3D_ifhhy")
+mesh = ExtResource("9_pi3fe")
+skeleton = NodePath("../..")
+
+[node name="WaterBarrier2" type="MeshInstance3D" parent="SewerStream"]
+transform = Transform3D(-0.3, 0, 2.4579e-07, 0, 0.4, 0, -2.62268e-08, 0, -2.81151, -0.82, -0.35, 0)
+material_override = SubResource("StandardMaterial3D_8b7sp")
+mesh = ExtResource("10_jgsku")
+skeleton = NodePath("../..")
+
+[node name="WaterBarrier3" type="MeshInstance3D" parent="SewerStream"]
+transform = Transform3D(-0.3, 0, 2.59464e-07, 0, 0.4, 0, -2.62268e-08, 0, -2.96793, -1.18, -0.35, 0)
+material_override = SubResource("StandardMaterial3D_8b7sp")
+mesh = ExtResource("10_jgsku")
+skeleton = NodePath("../..")
+
+[node name="SewerStream2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Water2" type="MeshInstance3D" parent="SewerStream2"]
+transform = Transform3D(-4.39108e-08, 0, -0.1, 0, 0.125, 0, 1.00456, 0, -4.37114e-09, -1.15, -0.0198586, -1.558)
+mesh = ExtResource("7_ngga3")
+skeleton = NodePath("../..")
+
+[node name="Wall-window-barred-medium2" type="MeshInstance3D" parent="SewerStream2"]
+transform = Transform3D(-1.07284e-07, 0, 0.75, 0, 0.5, 0, -1, 0, -8.04633e-08, -1, -0.101, -1.5)
+material_override = SubResource("StandardMaterial3D_ifhhy")
+mesh = ExtResource("9_pi3fe")
+skeleton = NodePath("../..")
+
+[node name="Wall-window-barred-medium3" type="MeshInstance3D" parent="SewerStream2"]
+transform = Transform3D(2.50343e-07, 0, -0.75, 0, 0.5, 0, 1, 0, 1.87758e-07, -1, -0.101, 1.5)
+material_override = SubResource("StandardMaterial3D_ifhhy")
+mesh = ExtResource("9_pi3fe")
+skeleton = NodePath("../..")
+
+[node name="WaterBarrier2" type="MeshInstance3D" parent="SewerStream2"]
+transform = Transform3D(-0.3, 0, 2.4579e-07, 0, 0.4, 0, -2.62268e-08, 0, -2.81151, -0.82, -0.35, 0)
+material_override = SubResource("StandardMaterial3D_8b7sp")
+mesh = ExtResource("10_jgsku")
+skeleton = NodePath("../..")
+
+[node name="WaterBarrier3" type="MeshInstance3D" parent="SewerStream2"]
+transform = Transform3D(-0.3, 0, 2.59464e-07, 0, 0.4, 0, -2.62268e-08, 0, -2.96793, -1.18, -0.35, 0)
+material_override = SubResource("StandardMaterial3D_8b7sp")
+mesh = ExtResource("10_jgsku")
+skeleton = NodePath("../..")
